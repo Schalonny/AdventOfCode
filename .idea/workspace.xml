@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="" />
+    <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day4/Guard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day4/Guard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day4/GuardsBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day4/GuardsBehavior.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,16 +16,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day4/GuardsBehavior.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdventOfCode.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,8 +56,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day4/Guard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+                <element signature="e#493#494#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day4/wallData">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15150">
-              <caret line="1010" column="31" selection-start-line="1007" selection-start-column="27" selection-end-line="1010" selection-end-column="31" />
+            <state relative-caret-position="107">
+              <caret line="901" column="11" selection-start-line="901" selection-start-column="6" selection-end-line="901" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -54,25 +89,35 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>06-03</find>
+      <find>09-08</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Day3/fabricClaims" />
-        <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
         <option value="$PROJECT_DIR$/src/Day4/wallData" />
         <option value="$PROJECT_DIR$/src/ImportData/ImportFromFile.java" />
         <option value="$PROJECT_DIR$/src/Day3/FabricClaims.java" />
         <option value="$PROJECT_DIR$/src/Day4/Guard.java" />
+        <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
         <option value="$PROJECT_DIR$/src/Day4/GuardsBehavior.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="149" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="145" />
     <option name="y" value="27" />
-    <option name="width" value="1107" />
+    <option name="width" value="1221" />
     <option name="height" value="741" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -116,6 +161,9 @@
       <pane id="Scope" />
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -156,17 +204,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="7" />
+    <frame x="145" y="27" width="1221" height="741" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25757575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38273615" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38235295" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -181,6 +230,18 @@
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Day4/GuardsBehavior.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../IntelliJ/jdk-12_linux-x64_bin/jdk-12/lib/src.zip!/java.base/java/lang/String.java">
@@ -225,19 +286,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Day3/FabricClaims.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
+        <state relative-caret-position="15">
           <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="8" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -245,27 +296,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day4/GuardsBehavior.java">
+    <entry file="file://$PROJECT_DIR$/src/Day4/wallData">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="107">
+          <caret line="901" column="11" selection-start-line="901" selection-start-column="6" selection-end-line="901" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day4/Guard.java">
+    <entry file="file://$PROJECT_DIR$/AdventOfCode.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day4/wallData">
+    <entry file="file://$PROJECT_DIR$/src/Day4/Guard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15150">
-          <caret line="1010" column="31" selection-start-line="1007" selection-start-column="27" selection-end-line="1010" selection-end-column="31" />
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day4/GuardsBehavior.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,40 +5,47 @@ import java.util.Objects;
 
 public class Guard implements Comparable<Guard> {
     private int number;
-    private boolean[] sleep = new boolean[60]; //default - false
+    private int[] sleep = new int[60]; //default - 0
     private int shifts;
+    private int totalAsleep;
 
     public Guard(int number) {
         this.number = number;
         this.shifts = 0;
+        this.totalAsleep = 0;
     }
 
-    public int getNumber() {
-        return number;
+    public void increaseShiftsByOne() {
+        this.shifts++;
+    }
+ public int[] getSleep(){
+        return this.sleep;
+ }
+    public int getNumber(){
+        return this.number;
+    }
+    public int getTotalAsleep() {
+        return this.totalAsleep;
     }
 
-    public int getShifts() {
-        return shifts;
+    public void putToSleep(int minute) {
+        this.sleep[minute]++;
+        this.totalAsleep++;
     }
 
-    public void setShifts(int shifts) {
-        this.shifts = shifts;
+    public void awake(int minute) {
+        this.sleep[minute]--;
+        this.totalAsleep--;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public boolean[] getSleep() {
-        return sleep;
-    }
-
-    public void setSleep(boolean[] sleep) {
-        this.sleep = sleep;
-    }
-
-    public void putToSleep(int minute){
-        this.sleep[minute]=true;
+    @Override
+    public String toString() {
+        return "Guard{" +
+                "number=" + number +
+                ", sleep=" + Arrays.toString(sleep) +
+                ", shifts=" + shifts +
+                ", total sleeps=" + totalAsleep +
+                '}' + '\n';
     }
 
     @Override
@@ -56,8 +63,6 @@ public class Guard implements Comparable<Guard> {
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(number, shifts);
-        result = 31 * result + Arrays.hashCode(sleep);
-        return result;
+        return Objects.hash(number);
     }
 }
