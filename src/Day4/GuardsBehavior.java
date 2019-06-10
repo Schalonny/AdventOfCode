@@ -14,6 +14,7 @@ public class GuardsBehavior {
         return guardsList;
     }
 
+    //szukamy elfa, który sumarycznie śpi najwięcej, a później minuty w której najczęściej
     private Guard findSleeper() {
         int sleeperID = -1;
         int totalAsleep = -1;
@@ -26,9 +27,28 @@ public class GuardsBehavior {
         }
         return mapOfGuards.get(sleeperID);
     }
+    //szukamy minuty, która najczęściej jest przesypiana przez jednego elfa
+    //zwracamy sumę kontrolną czyli iloczyn ID oraz wybranej minuty
+    public String findSleepMinute (){
+        int minute = -1;
+        int mostSleep = -1;
+        int sleeperID = -1;
+        Map<Integer, Guard> mapOfGuards = createGuardsMap(getSortedData());
+        for (Guard guard : mapOfGuards.values()) {
+            for (int i=0; i<guard.getSleep().length; i++){
+                if (guard.getSleep()[i]>mostSleep){
+                    minute = i;
+                    mostSleep = guard.getSleep()[i];
+                    sleeperID = guard.getNumber();
+                }
+            }
+        }
+        return "(" + sleeperID +"*" +minute+") = " + (sleeperID * minute);
+    }
+
 
     // sleeper ID x minute his sleept most
-    public int findControlSum() {
+    public String findControlSum() {
         Guard sleeper = findSleeper();
         int theBestMinute = 0;
         for (int i = 0; i < sleeper.getSleep().length; i++) {
@@ -36,7 +56,7 @@ public class GuardsBehavior {
                 theBestMinute = i;
             }
         }
-        return sleeper.getNumber() * theBestMinute;
+        return "(" + sleeper.getNumber() +"*" +theBestMinute+") = " + (sleeper.getNumber() * theBestMinute);
     }
 
     //ta metoda ma pozwolić stworzyć mapę Strażników wyciągając ich z listy danych

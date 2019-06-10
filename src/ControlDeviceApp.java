@@ -24,6 +24,7 @@ public class ControlDeviceApp {
         // Day 4
         System.out.println();
         GuardsBehavior guards = new GuardsBehavior();
-        System.out.println("Control sum for sleeper and the best minute to slip in is: " + guards.findControlSum());
+        System.out.println("Control sum for which guard sleep most and the best minute to slip in is: " + guards.findControlSum());
+        System.out.println("Control sum for which guard is most frequently asleep on the same minute: " + guards.findSleepMinute());
     }
 }
