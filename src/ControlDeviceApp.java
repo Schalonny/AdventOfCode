@@ -2,6 +2,7 @@ import Day1.FrequencyBody;
 import Day2.ScannerBody;
 import Day3.FabricClaims;
 import Day4.GuardsBehavior;
+import Day5.PolymerReductor;
 
 public class ControlDeviceApp {
 
@@ -26,5 +27,10 @@ public class ControlDeviceApp {
         GuardsBehavior guards = new GuardsBehavior();
         System.out.println("Control sum for which guard sleep most and the best minute to slip in is: " + guards.findControlSum());
         System.out.println("Control sum for which guard is most frequently asleep on the same minute: " + guards.findSleepMinute());
+        // Day 5
+        System.out.println();
+        PolymerReductor polymerReductor = new PolymerReductor();
+        System.out.println("Length of the Polymer after reductions is: " + polymerReductor.getPolymerLength(polymerReductor.getPolymer()));
+        System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
     }
 }
