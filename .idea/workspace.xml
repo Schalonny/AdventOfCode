@@ -4,9 +4,9 @@
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/CoordinatesProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/CoordinatesProblem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day6/CoordinatesProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day6/CoordinatesProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day6/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day6/Place.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day6/CoordinatesProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+            <state relative-caret-position="97">
+              <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560244657130</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit Day 6 - complete Manchattan Metric&#10; todo: minimize area of problem by adding min_i, min_j, max_i, max_j">
+      <created>1560332079665</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560332079665</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -263,7 +270,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38235295" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2761438" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -324,7 +331,8 @@
     <MESSAGE value="Add Day 4 - searching for sleeper" />
     <MESSAGE value="Add Day 5 - polymer problem" />
     <MESSAGE value="Add Day 6 - start working with Manhattan Metric" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 6 - start working with Manhattan Metric" />
+    <MESSAGE value="Edit Day 6 - complete Manchattan Metric&#10; todo: minimize area of problem by adding min_i, min_j, max_i, max_j" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit Day 6 - complete Manchattan Metric&#10; todo: minimize area of problem by adding min_i, min_j, max_i, max_j" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -526,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day6/CoordinatesProblem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        <state relative-caret-position="97">
+          <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

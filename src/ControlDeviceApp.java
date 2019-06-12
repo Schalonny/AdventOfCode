@@ -36,6 +36,6 @@ public class ControlDeviceApp {
         // Day 6
         System.out.println();
         CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
-        coordinatesProblem.Coordinates();
+        coordinatesProblem.MaxSaveArea();
     }
 }
