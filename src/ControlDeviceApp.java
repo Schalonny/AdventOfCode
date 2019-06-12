@@ -34,8 +34,7 @@ public class ControlDeviceApp {
         System.out.println("Length of the Polymer after reductions is: " + polymerReductor.getPolymerLength(polymerReductor.getPolymer()));
         System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
         // Day 6
-        System.out.println();
         CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
-        coordinatesProblem.MaxSaveArea();
+        coordinatesProblem.findSolution();
     }
 }

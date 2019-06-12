@@ -9,10 +9,19 @@ public class CoordinatesProblem {
     private static final String FILE = "./src/Day6/locations";
     private int minX = 1000, maxX = 0, minY = 1000, maxY = 0;
     private int areaOfHavingEveryCoordinateNearby = 0;
-    private static final int MAX_SUMMIRIZE_DISTANCE = 10000;
+    private int maxArea = 0;
+    private static final int MAX_SUMMARIZE_DISTANCE = 10000;
+
+    public void findSolution(){
+        maxSaveArea();
+        System.out.println();
+        System.out.println("Max area where you are closer to one location than others is " + maxArea + " feet square.");
+        System.out.println("Area where you are closer than 10.000 feet from every location is "
+                + areaOfHavingEveryCoordinateNearby + " feet square.");
+    }
 
 
-    public void MaxSaveArea() {
+    private void maxSaveArea() {
         ArrayList<Place> locations = convertData();  //import węzłów oraz minXY maxXY
         int[][] grid = fillTheGridWithClosestIDs(locations);       //utwórz i wypełnij siatkę informacją do kogo jest najbliżej
         for (int x = minX; x < maxX; x++) {
@@ -29,12 +38,10 @@ public class CoordinatesProblem {
         for (Integer banID : idsOfInfinity(grid)) {
             locations.remove(new Place(banID));
         }
-        int maxArea = 0;
         // z pozostałych mijesc znajdź wartość największego pola
         for (Place place : locations) {
             maxArea = Math.max(maxArea, place.area);
         }
-        System.out.println(areaOfHavingEveryCoordinateNearby);
 
     }
 
@@ -96,7 +103,7 @@ public class CoordinatesProblem {
                         grid[x][y] = -1;
                     }
                 }
-                if (summaraizeDistanceToAllPlaces < MAX_SUMMIRIZE_DISTANCE) {
+                if (summaraizeDistanceToAllPlaces < MAX_SUMMARIZE_DISTANCE) {
                     areaOfHavingEveryCoordinateNearby++;
                 }
             }
