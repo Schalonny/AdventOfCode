@@ -3,6 +3,7 @@ import Day2.ScannerBody;
 import Day3.FabricClaims;
 import Day4.GuardsBehavior;
 import Day5.PolymerReductor;
+import Day6.CoordinatesProblem;
 
 public class ControlDeviceApp {
 
@@ -32,5 +33,9 @@ public class ControlDeviceApp {
         PolymerReductor polymerReductor = new PolymerReductor();
         System.out.println("Length of the Polymer after reductions is: " + polymerReductor.getPolymerLength(polymerReductor.getPolymer()));
         System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
+        // Day 6
+        System.out.println();
+        CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
+        coordinatesProblem.Coordinates();
     }
 }

@@ -4,10 +4,11 @@ import Day4.Guard;
 import ImportData.ImportFromFile;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class CoordinatesProblem {
     private static final String FILE = "./src/Day6/locations";
-    private static final int GRID_SIZE = 500;
+    private static final int GRID_SIZE = 400;
 
 
     public void Coordinates() {
@@ -15,9 +16,12 @@ public class CoordinatesProblem {
         ArrayList<String> data = importFromFile.getData(FILE);
         ArrayList<Place> locations = new ArrayList<>();
         for (String datum : data) {
-            int x = Integer.parseInt(datum.substring(0, datum.indexOf(",") - 1));
-            int y = Integer.parseInt(datum.substring(datum.indexOf(", ") + 2), datum.length());
-            locations.add(new Place(x, y));
+            int x = Integer.parseInt(datum.substring(0, datum.indexOf(",")));
+            int y = Integer.parseInt(datum.substring(datum.indexOf(", ") + 2));
+            // można znaleźć minimalne oraz maksymalne x i y i tylko w takim kwadracie się poruszać
+            // wszystko co będzie na skraju wtedy będzie miało pole nieskończoność
+            // TODO
+            locations.add(new Place(x, y, data.indexOf(datum)));
         }// przekształcenie danych z ArrayListy Stringów na ArrayListę współrzędnych
         // locations(0), locations(1) ... to kolejne węzły
 
@@ -32,11 +36,32 @@ public class CoordinatesProblem {
                 }
             }
         }
-        for (Place location : locations) {
-            System.out.println(location.area);
+        // wywal ze zbioru lokacji zbanowane wartości (te które mają nieskończone pole)
+        for (Integer banID : idsOfInfinity(grid)) {
+            locations.remove(new Place(banID));
+        }
+        int maxArea = 0;
+        //  int maxAreaLocation = -1;
+        for (Place place : locations) {
+            maxArea = Math.max(maxArea,place.area);
         }
 
+        System.out.println(maxArea);
+
+
     }
+
+    private HashSet<Integer> idsOfInfinity(int[][] grid) {
+        HashSet<Integer> result = new HashSet<>();
+        for (int i = 0; i < GRID_SIZE; i++) {
+            result.add(grid[0][i]);
+            result.add(grid[GRID_SIZE - 1][i]);
+            result.add(grid[i][0]);
+            result.add(grid[i][GRID_SIZE - 1]);
+        }
+        return result;
+    }
+
 
     private int[][] fillTheGrid(ArrayList<Place> locations) {
         //stwórz siatkę kartezjańską
@@ -45,16 +70,17 @@ public class CoordinatesProblem {
         for (int i = 0; i < GRID_SIZE; i++) {
             for (int j = 0; j < GRID_SIZE; j++) {
                 // ustawa startową odległość na 1000 (nieskończoność)
-                int distance = 2 * GRID_SIZE;
+                int minDistance = 2 * GRID_SIZE;
                 // sprawdź wszystkie węzły
                 for (Place place : locations) {
                     //jeśli odległość od danego węzła jest mniejsza niż dotychczasowa minimalna
-                    if ((place.x + place.y) < distance) {
+                    int distance = Math.abs(place.x - i) + Math.abs(place.y - j);
+                    if (distance < minDistance) {
                         //zmień minimalny dystance dla tej lokacji na dystans do badanego węzła
-                        distance = place.x + place.y;
+                        minDistance = distance;
                         //i ustaw w tym miejscu siatki liczbę określającą numer węzła do którego najbliżej
-                        grid[i][j] = locations.indexOf(place);
-                    } else if ((place.x + place.y) == distance) {
+                        grid[i][j] = place.index;
+                    } else if (distance == minDistance) {
                         //w przeciwnym wypadku jeśli to pole zremisowało z innym najniższym (aktualnie)
                         //ustaw w tym węźle wartość -1 oznaczającą, że do nikogo nie ma "najbliżej"
                         grid[i][j] = -1;
