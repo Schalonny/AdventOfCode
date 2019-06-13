@@ -4,6 +4,7 @@ import Day3.FabricClaims;
 import Day4.GuardsBehavior;
 import Day5.PolymerReductor;
 import Day6.CoordinatesProblem;
+import Day7.SleighIntructions;
 
 public class ControlDeviceApp {
 
@@ -36,5 +37,8 @@ public class ControlDeviceApp {
         // Day 6
         CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
         coordinatesProblem.findSolution();
+        // Day 7
+        SleighIntructions sleighIntructions = new SleighIntructions();
+        sleighIntructions.findSolution();
     }
 }

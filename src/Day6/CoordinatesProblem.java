@@ -7,15 +7,16 @@ import java.util.HashSet;
 
 public class CoordinatesProblem {
     private static final String FILE = "./src/Day6/locations";
+    private static final int MAX_SUMMARIZE_DISTANCE = 10000;
     private int minX = 1000, maxX = 0, minY = 1000, maxY = 0;
     private int areaOfHavingEveryCoordinateNearby = 0;
-    private int maxArea = 0;
-    private static final int MAX_SUMMARIZE_DISTANCE = 10000;
+    private int maxAreaDominatedByOnePlace = 0;
 
     public void findSolution(){
         maxSaveArea();
         System.out.println();
-        System.out.println("Max area where you are closer to one location than others is " + maxArea + " feet square.");
+        System.out.println("Max area where you are closer to one location than others is "
+                + maxAreaDominatedByOnePlace + " feet square.");
         System.out.println("Area where you are closer than 10.000 feet from every location is "
                 + areaOfHavingEveryCoordinateNearby + " feet square.");
     }
@@ -40,7 +41,7 @@ public class CoordinatesProblem {
         }
         // z pozostałych mijesc znajdź wartość największego pola
         for (Place place : locations) {
-            maxArea = Math.max(maxArea, place.area);
+            maxAreaDominatedByOnePlace = Math.max(maxAreaDominatedByOnePlace, place.area);
         }
 
     }
