@@ -9,7 +9,7 @@ import Day7.SleighIntructions;
 public class ControlDeviceApp {
 
     public static void main(String[] args) {
-        // Day 1
+      /*  // Day 1
         System.out.println("Time-travel divice Error. Diagnostic started...");
         FrequencyBody frequencyBody = new FrequencyBody();
         System.out.println("Sum of frequencies: " + frequencyBody.readFrequences());
@@ -36,7 +36,9 @@ public class ControlDeviceApp {
         System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
         // Day 6
         CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
-        coordinatesProblem.findSolution();
+        coordinatesProblem.findSolution();*/
+        //TODO add menu and change code to looks like from day 6.
+
         // Day 7
         SleighIntructions sleighIntructions = new SleighIntructions();
         sleighIntructions.findSolution();
