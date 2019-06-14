@@ -17,7 +17,7 @@ public class NavigationSystem implements Riddle {
         System.out.println(metadataEntries);
     }
 
-    private void importData() {
+    private void importData() { // zwraca tablicę Integerów, występujących w pliku źródłowym
         ImportFromFile importFromFile = new ImportFromFile();
         String dataInputAsString = importFromFile.getData(FILE).get(0);
         for (String number : dataInputAsString.split(" ")) {
@@ -27,22 +27,22 @@ public class NavigationSystem implements Riddle {
 
 
     private void calculateRootMetadata() {
-        int howManyChildren = nextInt();
-        int howManyData = nextInt();
-        while (howManyChildren > 0) {
-            calculateRootMetadata();
-            howManyChildren--;
-        }
-        while (howManyData > 0) {
-            metadataEntries += nextInt();
-            howManyData--;
+        int howManyChildren = nextInt();    //odczytaj kolejną liczbę i zapisz jako liczba dzieci
+        int howManyData = nextInt();        //odczytaj kolejną liczbę i zapisz jako liczba danych
+        while (howManyChildren > 0) {       //dopóki są dzieci
+            calculateRootMetadata();        //powtórz operację na dziecku
+            howManyChildren--;              //zmniejsz liczbę dzieci
+        }                                   //po przejechaniu wszystkich dzieci, następne dane to metadane
+        while (howManyData > 0) {           //dopóki są jakieś metadane
+            metadataEntries += nextInt();   //do metadanych dodaj kolejną liczbę
+            howManyData--;                  //zmniejsz liczbę dzieci
         }
 
     }
 
     private int nextInt() {
-        int integer = inputData.get(0);
-        inputData.remove(0);
+        int integer = inputData.get(0);     //jako następną liczbę przypisz aktualnie pierwszą liczbę w ciągu danych
+        inputData.remove(0);          //usuń pierwszą liczbę z ciągu danych
         return integer;
     }
 }
