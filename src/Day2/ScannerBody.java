@@ -31,25 +31,22 @@ public class ScannerBody {
         for (String id : idsToCheck) {
             isTwice = false;
             isThree = false;
-            int endOfIdName = id.length();
 
-            while (endOfIdName > 1) {
+            while (id.length() > 1) {
                 char checkingLetter = id.charAt(0);
                 int appearanceOfCheckingLetter = 1;
                 int positionOfLetterToCompere = 1;
-                while (positionOfLetterToCompere < endOfIdName) {
+                while (positionOfLetterToCompere < id.length()) {
                     if (id.charAt(positionOfLetterToCompere) == checkingLetter) {
                         appearanceOfCheckingLetter++;
-                        id = id.substring(0, positionOfLetterToCompere) + id.substring(positionOfLetterToCompere + 1, endOfIdName);
-                        endOfIdName--;
+                        id = id.substring(0, positionOfLetterToCompere) + id.substring(positionOfLetterToCompere + 1);
                     } else positionOfLetterToCompere++;
                 }
                 if (appearanceOfCheckingLetter == 2)
                     isTwice = true; //taka konstrukcja powoduje, że jeśli znajdę kolejną literę, która
                     // powtarza się dwa razy, nie zwiększy nam to licznika "twice";
                 else if (appearanceOfCheckingLetter == 3) isThree = true;
-                id = id.substring(1, endOfIdName);
-                endOfIdName--;
+                id = id.substring(1);
             }
             if (isTwice) twice++;
             if (isThree) threeTimes++;
