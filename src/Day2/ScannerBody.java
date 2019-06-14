@@ -11,7 +11,7 @@ public class ScannerBody {
     public void findSolution() {
         readIDs();
         System.out.println("Scanning completed, control sum is " + findRepeatsAndReturnControlSum());
-        System.out.println("Simmilar IDs contains letters as follow: " + findSimilarPackages());
+        System.out.println("Similar IDs contains letters as follow: " + findSimilarPackages());
 
     }
 
@@ -36,13 +36,13 @@ public class ScannerBody {
             while (endOfIdName > 1) {
                 char checkingLetter = id.charAt(0);
                 int appearanceOfCheckingLetter = 1;
-                int positionOfLettersToCompere = 1;
-                while (positionOfLettersToCompere < endOfIdName) {
-                    if (id.charAt(positionOfLettersToCompere) == checkingLetter) {
+                int positionOfLetterToCompere = 1;
+                while (positionOfLetterToCompere < endOfIdName) {
+                    if (id.charAt(positionOfLetterToCompere) == checkingLetter) {
                         appearanceOfCheckingLetter++;
-                        id = id.substring(0, positionOfLettersToCompere) + id.substring(positionOfLettersToCompere + 1, endOfIdName);
+                        id = id.substring(0, positionOfLetterToCompere) + id.substring(positionOfLetterToCompere + 1, endOfIdName);
                         endOfIdName--;
-                    } else positionOfLettersToCompere++;
+                    } else positionOfLetterToCompere++;
                 }
                 if (appearanceOfCheckingLetter == 2)
                     isTwice = true; //taka konstrukcja powoduje, że jeśli znajdę kolejną literę, która

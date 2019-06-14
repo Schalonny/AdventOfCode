@@ -13,7 +13,6 @@ public class ControlDeviceApp {
         FrequencyBody frequencyBody = new FrequencyBody();
         frequencyBody.findSolution();
         // Day 2
-        System.out.println();
         ScannerBody scannerBody = new ScannerBody();
         scannerBody.findSolution();
       /*  // Day 3
