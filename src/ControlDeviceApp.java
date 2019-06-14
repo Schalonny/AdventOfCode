@@ -5,17 +5,18 @@ import Day4.GuardsBehavior;
 import Day5.PolymerReductor;
 import Day6.CoordinatesProblem;
 import Day7.SleighIntructions;
+import Day8.NavigationSystem;
 
 public class ControlDeviceApp {
 
     public static void main(String[] args) {
-        // Day 1
+       /* // Day 1
         FrequencyBody frequencyBody = new FrequencyBody();
         frequencyBody.findSolution();
         // Day 2
         ScannerBody scannerBody = new ScannerBody();
         scannerBody.findSolution();
-      /*  // Day 3
+        // Day 3
         System.out.println();
         FabricClaims fabricClaims = new FabricClaims();
         System.out.println("That many square inches has multiple claims: " + fabricClaims.multipleClaims());
@@ -32,11 +33,17 @@ public class ControlDeviceApp {
         System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
         // Day 6
         CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
-        coordinatesProblem.findSolution();*/
+        coordinatesProblem.findSolution();
         //TODO add menu and change code to looks like from day 6.
 
         // Day 7
         SleighIntructions sleighIntructions = new SleighIntructions();
         sleighIntructions.findSolution();
+
+        */
+
+       // Day 8
+        NavigationSystem navigationSystem = new NavigationSystem();
+        navigationSystem.findSolution();
     }
 }
