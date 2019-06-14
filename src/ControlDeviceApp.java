@@ -1,9 +1,14 @@
 import Day8.NavigationSystem;
+import Day9.MarbleMania;
+import ImportData.ImportFromFile;
 
 public class ControlDeviceApp {
+    private static final String INTRO = "./src/intro";
 
     public static void main(String[] args) {
-       /* // Day 1
+        /*ImportFromFile importFromFile = new ImportFromFile();
+        importFromFile.getData(INTRO).forEach(System.out::println);
+        // Day 1
         FrequencyBody frequencyBody = new FrequencyBody();
         frequencyBody.findSolution();
         // Day 2
@@ -33,10 +38,15 @@ public class ControlDeviceApp {
         SleighInstructions sleighInstructions = new SleighInstructions();
         sleighInstructions.findSolution();
 
-        */
+
 
        // Day 8
         NavigationSystem navigationSystem = new NavigationSystem();
         navigationSystem.findSolution();
+
+         */
+        // Day 9
+        MarbleMania marbleMania = new MarbleMania();
+        marbleMania.findSolution();
     }
 }
