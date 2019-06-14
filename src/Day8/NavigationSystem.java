@@ -17,7 +17,7 @@ public class NavigationSystem implements Riddle {
         System.out.println(metadataEntries);
     }
 
-    private void importData() { // zwraca tablicę Integerów, występujących w pliku źródłowym
+    private void importData() {             // wypełnia tablicę DANYCH, integarami występującymi w pliku źródłowym
         ImportFromFile importFromFile = new ImportFromFile();
         String dataInputAsString = importFromFile.getData(FILE).get(0);
         for (String number : dataInputAsString.split(" ")) {
@@ -37,7 +37,6 @@ public class NavigationSystem implements Riddle {
             metadataEntries += nextInt();   //do metadanych dodaj kolejną liczbę
             howManyData--;                  //zmniejsz liczbę dzieci
         }
-
     }
 
     private int nextInt() {
