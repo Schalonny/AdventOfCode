@@ -1,10 +1,11 @@
 package Day2;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
 import java.util.ArrayList;
 
-public class ScannerBody {
+public class ScannerBody implements Riddle {
     private static final String FILE = "./src/Day2/packagesIDs";
     private ArrayList<String> ids = new ArrayList<>();
 

@@ -1,11 +1,17 @@
 package Day4;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
 import java.util.*;
 
-public class GuardsBehavior {
+public class GuardsBehavior implements Riddle {
     private static final String INPUT = "./src/Day4/wallData";
+
+    @Override
+    public void findSolution() {
+
+    }
 
     private ArrayList<String> getSortedData() {
         ImportFromFile dataImport = new ImportFromFile();
@@ -106,5 +112,4 @@ public class GuardsBehavior {
         }
         return timeTable;
     }
-
 }

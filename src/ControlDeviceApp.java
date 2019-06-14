@@ -1,10 +1,3 @@
-import Day1.FrequencyBody;
-import Day2.ScannerBody;
-import Day3.FabricClaims;
-import Day4.GuardsBehavior;
-import Day5.PolymerReductor;
-import Day6.CoordinatesProblem;
-import Day7.SleighIntructions;
 import Day8.NavigationSystem;
 
 public class ControlDeviceApp {
@@ -37,8 +30,8 @@ public class ControlDeviceApp {
         //TODO add menu and change code to looks like from day 6.
 
         // Day 7
-        SleighIntructions sleighIntructions = new SleighIntructions();
-        sleighIntructions.findSolution();
+        SleighInstructions sleighInstructions = new SleighInstructions();
+        sleighInstructions.findSolution();
 
         */
 

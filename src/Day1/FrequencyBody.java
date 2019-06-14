@@ -1,11 +1,12 @@
 package Day1;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-public class FrequencyBody {
+public class FrequencyBody implements Riddle {
     private static final String FILE = "./src/Day1/frequencies";
     private ArrayList<String> frequencies = new ArrayList<>();
 

@@ -1,23 +1,30 @@
 package Day3;
 
+import Intarface.Riddle;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FabricClaims {
+public class FabricClaims implements Riddle {
     private static final String INPUT = "./src/Day3/fabricClaims";
     private static final int FABRIC_SIZE = 2000;
 
+    @Override
+    public void findSolution() {
+
+    }
+
     public int multipleClaims() {
-        int result = 0;
+        int squareInchesWithMultipleClaims = 0;
         int[][] fabric = claimsRead();
-        for (int i = 0; i < fabric.length; i++) {
+        for (int[] columnClaims : fabric) {
             for (int j = 0; j < fabric.length; j++) {
-                if (fabric[i][j] > 1) result++;
+                if (columnClaims[j] > 1) squareInchesWithMultipleClaims++;
             }
         }
-        return result;
+        return squareInchesWithMultipleClaims;
     }
 
     public int untouchedClaim() {

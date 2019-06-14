@@ -1,15 +1,21 @@
 package Day5;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
-public class PolymerReductor {
+public class PolymerReductor implements Riddle {
     private static final String FILE = "./src/Day5/polymer";
 
-    public StringBuilder getPolymer() {
+    private StringBuilder getPolymer() {
         ImportFromFile importFromFile = new ImportFromFile();
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(importFromFile.getData(FILE).get(0));
         return stringBuilder;
+    }
+
+    @Override
+    public void findSolution() {
+
     }
 
     private StringBuilder reducePolymer(StringBuilder polymer) {
@@ -31,7 +37,7 @@ public class PolymerReductor {
         return polymer;
     }
 
-    public int getPolymerLength(StringBuilder polymer) {
+    private int getPolymerLength(StringBuilder polymer) {
         return reducePolymer(polymer).length();
     }
 

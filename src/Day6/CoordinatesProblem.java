@@ -1,11 +1,12 @@
 package Day6;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class CoordinatesProblem {
+public class CoordinatesProblem implements Riddle {
     private static final String FILE = "./src/Day6/locations";
     private static final int MAX_SUMMARIZE_DISTANCE = 10000;
     private int minX = 1000, maxX = 0, minY = 1000, maxY = 0;

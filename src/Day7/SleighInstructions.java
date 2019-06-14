@@ -1,10 +1,11 @@
 package Day7;
 
 import ImportData.ImportFromFile;
+import Intarface.Riddle;
 
 import java.util.*;
 
-public class SleighIntructions {
+public class SleighInstructions implements Riddle {
     private static final String FILE = "./src/Day7/instructions";
     private static final int NUMBER_OF_HELPERS = 4;
 
