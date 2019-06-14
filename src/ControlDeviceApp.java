@@ -12,12 +12,11 @@ public class ControlDeviceApp {
         // Day 1
         FrequencyBody frequencyBody = new FrequencyBody();
         frequencyBody.findSolution();
-      /*  // Day 2
+        // Day 2
         System.out.println();
         ScannerBody scannerBody = new ScannerBody();
-        scannerBody.readIDs();
-        scannerBody.findSimilarPackages();
-        // Day 3
+        scannerBody.findSolution();
+      /*  // Day 3
         System.out.println();
         FabricClaims fabricClaims = new FabricClaims();
         System.out.println("That many square inches has multiple claims: " + fabricClaims.multipleClaims());
