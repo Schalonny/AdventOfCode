@@ -1,51 +1,44 @@
 package Day1;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import ImportData.ImportFromFile;
+
+import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class FrequencyBody {
     private static final String FILE = "./src/Day1/frequencies";
+    private ArrayList<String> frequencies = new ArrayList<>();
 
-    public int readFrequences(){
+    public void findSolution(){
+        readFrequencies();
+        System.out.println("Final frequency is " + sumOFFrequencies());
+        System.out.println("First duplicate frequency is " + repeatedFrequency());
+    }
+
+    private void readFrequencies(){
+        ImportFromFile importFromFile = new ImportFromFile();
+        frequencies = importFromFile.getData(FILE);
+    }
+
+    private int sumOFFrequencies(){
         int result = 0;
-        String line;
-        try
-                (FileReader fileReader = new FileReader(new File(FILE));
-                 BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            while ((line=bufferedReader.readLine())!=null){
-             result += Integer.parseInt(line);
-            }
-        } catch (IOException e) {
-            e.getMessage();
+        for (String frequency : frequencies) {
+            result += Integer.parseInt(frequency);
         }
         return result;
     }
 
-    public int repeatedFrequency() {
-        int result = 0;
+    private int repeatedFrequency() {
         TreeSet<Integer> subSums = new TreeSet<>();
-        subSums.add(0);
-        String line;
-        boolean duplicateFrequency = false;
-        while (!duplicateFrequency) {
+        int subSum = 0;
+        int iterator = 0;
 
-            try
-                    (FileReader fileReader = new FileReader(new File(FILE));
-                     BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-
-                while (((line = bufferedReader.readLine()) != null)) {
-                    result += Integer.parseInt(line);
-                    if (duplicateFrequency = subSums.contains(result)) break;
-                    subSums.add(result);
-                }
-            } catch (IOException e) {
-                e.getMessage();
-            }
+        while (!subSums.contains(subSum)){
+            subSums.add(subSum);
+            subSum+=Integer.parseInt(frequencies.get(iterator%frequencies.size()));
+            iterator ++;
         }
-        if (!duplicateFrequency) System.out.print("Brak powtórzeń, ostatni wynik to: ");
-        return result;
+
+        return subSum;
     }
 }

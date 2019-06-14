@@ -9,12 +9,10 @@ import Day7.SleighIntructions;
 public class ControlDeviceApp {
 
     public static void main(String[] args) {
-      /*  // Day 1
-        System.out.println("Time-travel divice Error. Diagnostic started...");
+        // Day 1
         FrequencyBody frequencyBody = new FrequencyBody();
-        System.out.println("Sum of frequencies: " + frequencyBody.readFrequences());
-        System.out.println("First repeted frequency is " + frequencyBody.repeatedFrequency());
-        // Day 2
+        frequencyBody.findSolution();
+      /*  // Day 2
         System.out.println();
         ScannerBody scannerBody = new ScannerBody();
         scannerBody.readIDs();
