@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/SleighInstructions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/MarbleMania.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/gameStatus" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/META-INF/AdventOfCode.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/intro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day10/initialPosition" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day9/MarbleMania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day9/MarbleMania.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,17 +60,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day9/MarbleMania.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="43" column="81" lean-forward="true" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
+            <state relative-caret-position="75">
+              <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="6" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2417#2418#0" expanded="true" />
                 <element signature="e#4099#4100#0" expanded="true" />
                 <element signature="e#4135#4136#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Day10/TheStarsAlign.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Day10/initialPosition">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -162,6 +179,8 @@
         <option value="$PROJECT_DIR$/src/Day9/gameStatus" />
         <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
         <option value="$PROJECT_DIR$/src/Day9/MarbleMania.java" />
+        <option value="$PROJECT_DIR$/src/Day10/initialPosition" />
+        <option value="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" />
       </list>
     </option>
   </component>
@@ -194,7 +213,7 @@
               <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day9" type="462c0819:PsiDirectoryNode" />
+              <item name="Day10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -382,21 +401,28 @@
       <option name="project" value="LOCAL" />
       <updated>1560527553287</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Day 9, redo all day, using more efficient double linked list, done second task">
+      <created>1560703074962</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560703074962</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="87" y="27" width="1279" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12570965" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12570965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31699347" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31699347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -473,7 +499,8 @@
     <MESSAGE value="Day 8, second riddle, add missing files" />
     <MESSAGE value="Fix minor errors; Implement Interface to each class" />
     <MESSAGE value="Day 9, first task done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 9, first task done" />
+    <MESSAGE value="Day 9, redo all day, using more efficient double linked list, done second task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 9, redo all day, using more efficient double linked list, done second task" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -789,13 +816,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day9/MarbleMania.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="43" column="81" lean-forward="true" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
+        <state relative-caret-position="75">
+          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="6" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2417#2418#0" expanded="true" />
             <element signature="e#4099#4100#0" expanded="true" />
             <element signature="e#4135#4136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day10/initialPosition">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day10/TheStarsAlign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
