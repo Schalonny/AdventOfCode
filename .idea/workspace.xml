@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day9/MarbleMania.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day9/gameStatus" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/intro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/SleighInstructions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/MarbleMania.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/gameStatus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/META-INF/AdventOfCode.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/AdventOfCode/intro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day1/FrequencyBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day1/FrequencyBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day2/ScannerBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day2/ScannerBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day3/FabricClaims.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day3/FabricClaims.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day4/GuardsBehavior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day4/GuardsBehavior.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day5/PolymerReductor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day5/PolymerReductor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/CoordinatesProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/CoordinatesProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/SleighIntructions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Intarface/Riddle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intarface/Riddle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day9/MarbleMania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day9/MarbleMania.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day1/FrequencyBody.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="9" selection-end-column="64" />
+            <state relative-caret-position="255">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,10 +67,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day9/MarbleMania.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="-30">
+              <caret line="43" column="81" lean-forward="true" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2417#2418#0" expanded="true" />
+                <element signature="e#4099#4100#0" expanded="true" />
+                <element signature="e#4135#4136#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,6 +189,12 @@
               <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Day9" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560511983147</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Day 9, first task done">
+      <created>1560527553287</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560527553287</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -463,7 +472,8 @@
     <MESSAGE value="Day 8, first riddle - edit comments" />
     <MESSAGE value="Day 8, second riddle, add missing files" />
     <MESSAGE value="Fix minor errors; Implement Interface to each class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix minor errors; Implement Interface to each class" />
+    <MESSAGE value="Day 9, first task done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 9, first task done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -736,16 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day1/FrequencyBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="9" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -770,12 +770,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day9/MarbleMania.java">
+    <entry file="file://$PROJECT_DIR$/src/Day1/FrequencyBody.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="255">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day9/Marble.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day9/MarbleMania.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="43" column="81" lean-forward="true" selection-start-line="43" selection-start-column="81" selection-end-line="43" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
+            <element signature="e#4135#4136#0" expanded="true" />
           </folding>
         </state>
       </provider>
