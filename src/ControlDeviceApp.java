@@ -1,3 +1,4 @@
+import Day10.TheStarsAlign;
 import Day8.NavigationSystem;
 import Day9.MarbleMania;
 import ImportData.ImportFromFile;
@@ -44,9 +45,13 @@ public class ControlDeviceApp {
         NavigationSystem navigationSystem = new NavigationSystem();
         navigationSystem.findSolution();
 
-         */
+
         // Day 9
         MarbleMania marbleMania = new MarbleMania();
         marbleMania.findSolution();
+         */
+
+        // Day 10
+        new TheStarsAlign().findSolution();
     }
 }
