@@ -40,12 +40,12 @@ public class TheStarsAlign implements Riddle {
 
     @Override
     public void findSolution() {
-        // setAreaBorders();
         int lastWidth = INFINITY;
         xWidth = INFINITY - 1;
         while (xWidth < lastWidth) {
             if (xWidth < 70) {
-                System.out.println(timeToWait);
+                System.out.println("To see this on the sky we have to wait " + timeToWait + " seconds. " +
+                        "It's over " + timeToWait/3600 + " hours and "  + (timeToWait%3600) / 60 + " minutes.");
                 showShy();
             }
             lastWidth = xWidth;
@@ -88,7 +88,7 @@ public class TheStarsAlign implements Riddle {
         for (int y = 0; y < yWidth+1; y++) {
             skyLine.add(new StringBuilder());
             for (int x = 0; x < xWidth; x++) {
-                skyLine.get(y).append('-');
+                skyLine.get(y).append(' ');
             }
         }
         for (Star star : stars) {
@@ -107,16 +107,6 @@ public class TheStarsAlign implements Riddle {
             this.yPosition = yPosition;
             this.xVelocity = xVelocity;
             this.yVelocity = yVelocity;
-        }
-
-        @Override
-        public String toString() {
-            return "Star{" +
-                    "xPosition=" + xPosition +
-                    ", yPosition=" + yPosition +
-                    ", xVelocity=" + xVelocity +
-                    ", yVelocity=" + yVelocity +
-                    '}';
         }
     }
 }
