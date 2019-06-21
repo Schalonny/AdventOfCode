@@ -20,13 +20,12 @@ public class ChronalCharge implements Riddle {
     @Override
     public void findSolution() {
         fillTheGrid();
-        sums.sort(Cell::compareTo);
-        System.out.println(sums.get(0).x + "," + sums.get(0).y);
-       /* sums.sort(Comparator.comparing(Cell::getMaxSum).reversed());
-        for (int i = 0; i < 1; i++) {
-            System.out.println(sums.get(i).maxSum);
-            System.out.println(sums.get(i).x + "," + sums.get(i).y + "," + sums.get(i).sizeOfMaxSum);
-        }*/
+        sums.sort(Comparator.comparing(Cell::getSum3x3).reversed());
+        System.out.println(sums.get(0).x+1 + "," + sums.get(0).y+1);
+        sums.sort(Comparator.comparing(Cell::getMaxSum).reversed());
+        System.out.println(sums.get(0).maxSum);
+        System.out.println(sums.get(0).x+1 + "," + sums.get(0).y+1 + "," + sums.get(0).sizeOfMaxSumSquare);
+
     }
 
     private void fillTheGrid() {
@@ -49,41 +48,44 @@ public class ChronalCharge implements Riddle {
                 }
             }
         }
-        Cell cell = new Cell(x, y, sum);
-        int squareSize = 0;
-        cell.maxSum = -5;
-        while (x + squareSize < GRID_SIZE && y + squareSize < GRID_SIZE && squareSize < 20) {
-            squareSize++;
-            int temporarySum = 0;
-            for (int i = 0; i < squareSize; i++) {
-                for (int j = 0; j < squareSize; j++) {
-                    temporarySum += grid[x + i][y + j];
-                }
-            }
-            if (cell.maxSum < temporarySum) {
-                cell.maxSum = temporarySum;
-                cell.sizeOfMaxSum = squareSize;
-            }
-        }
-        sums.add(cell);
+        sums.add(setMaxSumParameters(new Cell(x, y, sum)));
     }
 
-    private class Cell implements Comparable<Cell> {
-        int x, y, sum3x3, maxSum, sizeOfMaxSum;
-
-        public int getMaxSum() {
-            return maxSum;
+    private Cell setMaxSumParameters(Cell cell){
+        cell.maxSum = cell.sum3x3;
+        for (int i=4; i<GRID_SIZE-cell.x && i<GRID_SIZE-cell.y; i++){
+            int sum = 0;
+            for (int x = 0; x < i; x++) {
+                for (int y = 0; y < i; y++) {
+                    sum += grid[cell.x + x][cell.y + y];
+                }
+            }
+            if (sum>cell.maxSum){
+                cell.sizeOfMaxSumSquare = i;
+                cell.maxSum = sum;
+            }
         }
+        return cell;
+    }
 
-        public Cell(int x, int y, int sum3x3) {
+    private class Cell {
+        int x, y, sum3x3;
+        int maxSum, sizeOfMaxSumSquare;
+
+        Cell(int x, int y, int sum3x3) {
             this.x = x;
             this.y = y;
             this.sum3x3 = sum3x3;
+            this.maxSum = sum3x3;
+            sizeOfMaxSumSquare = 3;
         }
 
-        @Override
-        public int compareTo(Cell o) {
-            return o.sum3x3 - this.sum3x3;
+        int getSum3x3() {
+            return sum3x3;
+        }
+
+        int getMaxSum() {
+            return maxSum;
         }
     }
 }
