@@ -24,4 +24,21 @@ public class ImportFromFile {
         }
         return data;
     }
+
+    public ArrayList<StringBuilder> getDataAsStringBuilders(String fileName) {
+        ArrayList<StringBuilder> data = new ArrayList<>();
+        String compareLine;
+        try
+                (FileReader fileReader = new FileReader(new File(fileName));
+                 BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            while (((compareLine = bufferedReader.readLine()) != null)) {
+                data.add(new StringBuilder().append(compareLine));
+            }
+        } catch (
+                IOException e) {
+            e.getMessage();
+        }
+        return data;
+    }
 }

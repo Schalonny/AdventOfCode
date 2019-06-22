@@ -1,6 +1,7 @@
 import Day10.TheStarsAlign;
 import Day11.ChronalCharge;
 import Day12.SubterraneanSustainability;
+import Day13.MineCartMadness;
 import Day8.NavigationSystem;
 import Day9.MarbleMania;
 import ImportData.ImportFromFile;
@@ -60,6 +61,9 @@ public class ControlDeviceApp {
         // new ChronalCharge().findSolution();
 
         // Day 12
-        new SubterraneanSustainability().findSolution();
+        // new SubterraneanSustainability().findSolution();
+
+        // Day 13
+        new MineCartMadness().findSolution();
     }
 }
