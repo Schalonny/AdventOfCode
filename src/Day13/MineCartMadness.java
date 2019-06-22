@@ -6,9 +6,10 @@ import Intarface.Riddle;
 import java.util.ArrayList;
 
 public class MineCartMadness implements Riddle {
-    private static final String FILE = "./src/Day13/tunels";
+    private static final String FILE = "./src/Day13/tunnels";
     private static final String DIRECTIONS = "^>v<";
     private ArrayList<Cart> carts;
+
 
 
     public MineCartMadness() {{
