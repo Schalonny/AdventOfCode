@@ -4,16 +4,12 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class MineCartMadness implements Riddle {
     private static final String FILE = "./src/Day13/tunnels";
     private static final String DIRECTIONS = "^>v<";
     private ArrayList<StringBuilder> tunnels;
     private ArrayList<Cart> carts;
-    private String collisionCoordinates;
 
 
     public MineCartMadness() {
@@ -38,87 +34,83 @@ public class MineCartMadness implements Riddle {
 
     @Override
     public void findSolution() {
-/*        boolean safe = true;
-        // załóż, że trasa jest bezpieczna
-        while (safe) {
-            // dopóki nie zdaży się żaden wypadek
-            carts.sort(Cart::compareTo);
-            for (Cart cart : carts) {
-                // dla każdej kolejki
-                tunnels.get(cart.y).replace(cart.x, cart.x + 1, Character.toString(cart.roadUnder));
-                // podmień symbol kolejki na symbol tunelu, który się pod nim znajduje
-                cart.go();
-                // pojedź kolejką, tj. zmień jej pozycje oraz orientacje jeśli napotka na zakręt
-                safe = cart.stepOnNewSpace(tunnels.get(cart.y).charAt(cart.x));
-                // sprawdz zachowanie/stan kolejki na nowym polu - jeśli była już tam kolejka metoda zwraca FALSE
-                // stąd zmienna safe przyjmuje teraz odpowiednią wartość
-                if (!safe) {
-                    // jeśli było niebezpieczeństwo wydrukuj informacje o tym
-                    collisionCoordinates = cart.x + "," + cart.y;
-                    System.out.println("First collision will have place at location: " + collisionCoordinates);
-                    break;
-                }
-                tunnels.get(cart.y).replace(cart.x, cart.x + 1, Character.toString(cart.direction));
-                // narysuj kolejkę na nowym miejscu
-            }
-        }*/
-        while (carts.size() > 1) {
-            carts.sort(Cart::compareTo);
-            // dopóki jest więcej niż jedna kolejka
-            for (int cartID = 0; cartID<carts.size();cartID++) {
-                // wykonaj krotkę
-                    // dla każdej kolejki
-                    tunnels.get(carts.get(cartID).y).replace(carts.get(cartID).x, carts.get(cartID).x + 1, Character.toString(carts.get(cartID).roadUnder));
-                    // podmień symbol kolejki na symbol tunelu, który się pod nim znajduje
-                    carts.get(cartID).go();
-                    // pojedź kolejką, tj. zmień jej pozycje oraz orientacje jeśli napotka na zakręt
-                    // sprawdz zachowanie/stan kolejki na nowym polu - jeśli była już tam kolejka metoda zwraca FALSE
+        int cartsOnTrack = carts.size();
+        int collisionNumber =0;
+        while (cartsOnTrack > 1) {                                      // dopóki jest więcej niż jedna kolejka na trasie
+            carts.sort(Cart::compareTo);                                // posortuj kolejki a następnie wykonaj krotkę
+            for (int cartID = 0; cartID < carts.size(); cartID++) {     // dla każdego kolejnego indeksu z tabeli kolejek
+                if (carts.get(cartID).isStillOnTrack) {                 // jeśli dana kolejka jest ciągle na trasie
+                    drawOnMap(cartID, true);            // zdejmij kolejkę z mapy (uzupełnij rysunek)
+                    carts.get(cartID).go();                             // porusz kolejką o numerze cartID
                     if (carts.get(cartID).stepOnNewSpace(tunnels.get(carts.get(cartID).y).charAt(carts.get(cartID).x))) {
-                         tunnels.get(carts.get(cartID).y).replace(carts.get(cartID).x, carts.get(cartID).x + 1, Character.toString(carts.get(cartID).direction));
-                    } else {
-                        // jeśli było niebezpieczeństwo wydrukuj informacje o tym
-                        collisionCoordinates = carts.get(cartID).x + "," + carts.get(cartID).y;
-                        System.out.println("Next collision will have place at location: " + collisionCoordinates);
-                        tunnels.get(carts.get(cartID).y).replace(carts.get(cartID).x, carts.get(cartID).x + 1, Character.toString(carts.get(cartID).roadUnder));
-                        boolean foundCollisionCart = false;
-                        int collisionCartsID = -1;
-                        while (!foundCollisionCart) {
-                            collisionCartsID++;
-                            if (carts.get(collisionCartsID).y==carts.get(cartID).y && carts.get(collisionCartsID).x == carts.get(cartID).x && collisionCartsID!=cartID) {
-                                foundCollisionCart = true;
-                                carts.remove(Math.max(collisionCartsID,cartID));
-                                carts.remove(Math.min(collisionCartsID,cartID));
-                                System.out.println(carts.size());
-                                if (collisionCartsID<cartID) { cartID--;}
-                                cartID--;
-                            }
-                        }
+                        drawOnMap(cartID, false);       // jeśli nowe pole nie zawierało kolejki, postaw ją tam
+                    } else {                                            // w przeciwnym razie podaj informacje o miejscu kolizji
+                        collisionNumber++;
+                        String collisionCoordinates = carts.get(cartID).x + "," + carts.get(cartID).y;
+                        System.out.println(collisionNumber + ". collision will have place at location: " + collisionCoordinates);
+                        foundCollisionCartAndRemoveBothFromTrack(cartID);   // zdejmij z trasy rozpatrywaną kolejkę oraz
+                        cartsOnTrack -= 2;                              // tą z którą się zderzył, obniż liczbę aktywnych kolejek
                     }
-                    // narysuj kolejkę na nowym miejscu
-                }
-            }
-            // jeśli stepOnNewSpace zwraca FALSE (potencjalny wypadek) sprawdź czy tamta kolejka nie jest do usunięcia
-            // oznacz kolejkę jako "do usnięcia"
-            // oznacz kolejkę na którą nastąpiliśmy jako "do usunięcia"
-
+                }                                                       // jeśli kolejki nie ma na trasie, omiń rozpatrywanie
+            }                                                           // zakończ krotkę po sprawdzeniu wszystkich kolejek
         }
+        for (Cart cart : carts) {
+            if (cart.isStillOnTrack) {
+                System.out.println("Cart that is still on track is now at " + cart.x + "," + cart.y);
+            }
+        }
+    }
 
+    private void foundCollisionCartAndRemoveBothFromTrack(int cartID) {
+        carts.get(cartID).setStillOnTrack(false);                       // zdejmij z trasy rozpatrywaną kolejkę
+        for (int i=0; i<carts.size(); i++) {                              // wśród wszystkich kolejek
+            if (isOnTheSameSpot(carts.get(cartID), carts.get(i))) {    // wyszukaj tę, która jest na tym samym miejscu
+                carts.get(i).setStillOnTrack(false);
+                drawOnMap(i, true);        // pole kraksy oznacz pierwotnym symbolem
+                break;                                                  // usuń odpowiednią kolejkę z trasy i zakończ pętle
+            }
+        }
+    }
+
+    private boolean isOnTheSameSpot(Cart cart1, Cart cart2) {
+        return (cart1.y == cart2.y &&
+                cart1.x == cart2.x &&
+                cart2.isStillOnTrack);
+    }
+
+    private void drawOnMap(int cartID, boolean goOutRatherThanIn) {
+        String toDraw;
+        if (goOutRatherThanIn) {
+            toDraw = Character.toString(carts.get(cartID).roadUnder);
+        } else {
+            toDraw = Character.toString(carts.get(cartID).direction);
+        }
+        int row = carts.get(cartID).y;
+        int column = carts.get(cartID).x;
+        tunnels.get(row).replace(column, column + 1, toDraw);
+    }
 
 
     private class Cart implements Comparable<Cart> {
         int x, y;
         char direction;
         char roadUnder;
+        boolean isStillOnTrack;
         CrossroadDecision crossroadDecision;
 
         Cart(int x, int y, char direction) {
             this.x = x;
             this.y = y;
             this.direction = direction;
+            this.isStillOnTrack = true;
             if (direction == '>' || direction == '<') {
                 roadUnder = '-';
             } else roadUnder = '|';
             this.crossroadDecision = CrossroadDecision.LEFT;
+        }
+
+        void setStillOnTrack(boolean stillOnTrack) {
+            isStillOnTrack = stillOnTrack;
         }
 
         void meetCrossroad() {
