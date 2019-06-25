@@ -2,6 +2,7 @@ import Day10.TheStarsAlign;
 import Day11.ChronalCharge;
 import Day12.SubterraneanSustainability;
 import Day13.MineCartMadness;
+import Day14.ChocolateCharts;
 import Day8.NavigationSystem;
 import Day9.MarbleMania;
 import ImportData.ImportFromFile;
@@ -64,6 +65,9 @@ public class ControlDeviceApp {
         // new SubterraneanSustainability().findSolution();
 
         // Day 13
-        new MineCartMadness().findSolution();
+        // new MineCartMadness().findSolution();
+
+        // Day 14
+        new ChocolateCharts().findSolution();
     }
 }

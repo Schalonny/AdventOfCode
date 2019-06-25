@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$CrossroadDecision.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$CrossroadDecision.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+            <state relative-caret-position="138">
+              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="-718">
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -102,9 +102,9 @@
         <option value="$PROJECT_DIR$/src/Day12/SubterraneanSustainability.java" />
         <option value="$PROJECT_DIR$/src/Day13/tunels" />
         <option value="$PROJECT_DIR$/src/ImportData/ImportFromFile.java" />
-        <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
         <option value="$PROJECT_DIR$/src/Day13/MineCartMadness.java" />
         <option value="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" />
+        <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
       </list>
     </option>
   </component>
@@ -136,44 +136,14 @@
               <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day9" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day10" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day11" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day12" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Day14" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdventOfCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdventOfCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ImportData" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -432,21 +402,28 @@
       <option name="project" value="LOCAL" />
       <updated>1561396832530</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Day 14, first task skelleton, should work">
+      <created>1561462073799</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1561462073799</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20378788" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20681818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22801302" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22801302" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -454,7 +431,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32736155" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32736155" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -528,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edit Day 6 - optymize area of searching; cleaning the code of day6; add second task" />
     <MESSAGE value="Cleaning code of code 6, and start with ControlDevice" />
     <MESSAGE value="Day7 SleightInstruction; skeleton" />
     <MESSAGE value="Day7 SleightInstruction - sleight first task solved" />
@@ -553,7 +529,8 @@
     <MESSAGE value="Day 13, Cart model only" />
     <MESSAGE value="Day 13, First Collision found" />
     <MESSAGE value="Day 13, both tasks done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 13, both tasks done" />
+    <MESSAGE value="Day 14, first task skelleton, should work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task skelleton, should work" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -854,16 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Day12/SubterraneanSustainability.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -929,10 +896,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        <state relative-caret-position="-718">
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>

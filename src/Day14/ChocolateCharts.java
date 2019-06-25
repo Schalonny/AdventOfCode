@@ -25,7 +25,6 @@ public class ChocolateCharts implements Riddle {
             addRecipes(firstElf.score + secondElf.score);
             elvesTakesNewRecipes();
         }
-
     }
 
     private void addRecipes(int valueOfRecipe) {
