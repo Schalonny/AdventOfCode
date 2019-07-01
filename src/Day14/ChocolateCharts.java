@@ -3,12 +3,14 @@ package Day14;
 import Intarface.Riddle;
 
 public class ChocolateCharts implements Riddle {
+    private final static int ITERATIONS = 293801;
+    private final static String RECIPE_FINAL = String.valueOf(ITERATIONS);
+    private final static int RESULT_LENGTH = 10;
     private int numberOfRecipes;
     private Recipe firstRecipe, lastRecipe;
     private Recipe firstElf;
     private Recipe secondElf;
-    private final static int ITERATIONS = 293801;
-    private final static int RESULT_LENGTH = 10;
+    private StringBuilder scoreSequance = new StringBuilder();
 
     public ChocolateCharts() {
         lastRecipe = new Recipe();
@@ -21,10 +23,21 @@ public class ChocolateCharts implements Riddle {
 
     @Override
     public void findSolution() {
-        while (numberOfRecipes<ITERATIONS+RESULT_LENGTH+1){
+        StringBuilder sb = new StringBuilder("000000");
+        while (!sb.toString().equals(RECIPE_FINAL)) {
             addRecipes(firstElf.score + secondElf.score);
             elvesTakesNewRecipes();
+            sb.deleteCharAt(0);
+            sb.append(lastRecipe.score);
         }
+        System.out.println();
+        System.out.println(numberOfRecipes);
+
+
+    /*    while (numberOfRecipes<ITERATIONS+RESULT_LENGTH+1){
+            addRecipes(firstElf.score + secondElf.score);
+            elvesTakesNewRecipes();
+        }*/
     }
 
     private void addRecipes(int valueOfRecipe) {
@@ -53,16 +66,18 @@ public class ChocolateCharts implements Riddle {
     private class Recipe {
         int score;
         Recipe nextRecipe;
+       // Recipe previousRecipe;
 
         Recipe() {}
 
         Recipe(int newValue) {
             this.score = newValue;
             lastRecipe.nextRecipe = this;
+         //   this.previousRecipe = lastRecipe;
             lastRecipe = this;
             this.nextRecipe = firstRecipe;
             numberOfRecipes++;
-            if (numberOfRecipes>ITERATIONS) {
+            if (numberOfRecipes>ITERATIONS && numberOfRecipes<=ITERATIONS+RESULT_LENGTH) {
                 System.out.print(this.score);
             }
         }

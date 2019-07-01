@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness$Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
+            <state relative-caret-position="810">
               <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -36,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-718">
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            <state relative-caret-position="91">
+              <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -103,8 +99,8 @@
         <option value="$PROJECT_DIR$/src/Day13/tunels" />
         <option value="$PROJECT_DIR$/src/ImportData/ImportFromFile.java" />
         <option value="$PROJECT_DIR$/src/Day13/MineCartMadness.java" />
-        <option value="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" />
         <option value="$PROJECT_DIR$/src/ControlDeviceApp.java" />
+        <option value="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" />
       </list>
     </option>
   </component>
@@ -120,6 +116,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,8 +140,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -409,22 +405,29 @@
       <option name="project" value="LOCAL" />
       <updated>1561462073799</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Day 14, first task skelleton, working">
+      <created>1561462617551</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1561462617551</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20681818" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20984848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22801302" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22801302" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -505,7 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cleaning code of code 6, and start with ControlDevice" />
     <MESSAGE value="Day7 SleightInstruction; skeleton" />
     <MESSAGE value="Day7 SleightInstruction - sleight first task solved" />
     <MESSAGE value="Day7 SleightInstruction - second task done, and clean code" />
@@ -530,7 +532,8 @@
     <MESSAGE value="Day 13, First Collision found" />
     <MESSAGE value="Day 13, both tasks done" />
     <MESSAGE value="Day 14, first task skelleton, should work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task skelleton, should work" />
+    <MESSAGE value="Day 14, first task skelleton, working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task skelleton, working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -898,7 +901,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ControlDeviceApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="810">
           <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -908,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-718">
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        <state relative-caret-position="91">
+          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
         </state>
       </provider>
     </entry>
