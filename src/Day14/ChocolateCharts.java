@@ -6,11 +6,12 @@ public class ChocolateCharts implements Riddle {
     private final static int ITERATIONS = 293801;
     private final static String RECIPE_FINAL = String.valueOf(ITERATIONS);
     private final static int RESULT_LENGTH = 10;
+    private int recipesBefore;
     private int numberOfRecipes;
     private Recipe firstRecipe, lastRecipe;
     private Recipe firstElf;
     private Recipe secondElf;
-    private StringBuilder scoreSequance = new StringBuilder();
+    private StringBuilder scoreSequence = new StringBuilder("000000");
 
     public ChocolateCharts() {
         lastRecipe = new Recipe();
@@ -19,25 +20,17 @@ public class ChocolateCharts implements Riddle {
         addRecipes(7);
         firstElf = firstRecipe;
         secondElf = lastRecipe;
+        recipesBefore = 0;
     }
 
     @Override
     public void findSolution() {
-        StringBuilder sb = new StringBuilder("000000");
-        while (!sb.toString().equals(RECIPE_FINAL)) {
+        while (recipesBefore == 0) {
             addRecipes(firstElf.score + secondElf.score);
             elvesTakesNewRecipes();
-            sb.deleteCharAt(0);
-            sb.append(lastRecipe.score);
         }
         System.out.println();
-        System.out.println(numberOfRecipes);
-
-
-    /*    while (numberOfRecipes<ITERATIONS+RESULT_LENGTH+1){
-            addRecipes(firstElf.score + secondElf.score);
-            elvesTakesNewRecipes();
-        }*/
+        System.out.println(recipesBefore);
     }
 
     private void addRecipes(int valueOfRecipe) {
@@ -52,13 +45,13 @@ public class ChocolateCharts implements Riddle {
         }
     }
 
-    private void elvesTakesNewRecipes(){
-        int firstElfJump = firstElf.score+1;
-        int secondElfJump = secondElf.score+1;
-        for (int i=0; i<firstElfJump; i++){
-            firstElf= firstElf.nextRecipe;
+    private void elvesTakesNewRecipes() {
+        int firstElfJump = firstElf.score + 1;
+        int secondElfJump = secondElf.score + 1;
+        for (int i = 0; i < firstElfJump; i++) {
+            firstElf = firstElf.nextRecipe;
         }
-        for (int j=0; j<secondElfJump; j++){
+        for (int j = 0; j < secondElfJump; j++) {
             secondElf = secondElf.nextRecipe;
         }
     }
@@ -66,19 +59,23 @@ public class ChocolateCharts implements Riddle {
     private class Recipe {
         int score;
         Recipe nextRecipe;
-       // Recipe previousRecipe;
 
-        Recipe() {}
+        Recipe() {
+        }
 
         Recipe(int newValue) {
             this.score = newValue;
             lastRecipe.nextRecipe = this;
-         //   this.previousRecipe = lastRecipe;
             lastRecipe = this;
             this.nextRecipe = firstRecipe;
             numberOfRecipes++;
-            if (numberOfRecipes>ITERATIONS && numberOfRecipes<=ITERATIONS+RESULT_LENGTH) {
+            if (numberOfRecipes > ITERATIONS && numberOfRecipes <= ITERATIONS + RESULT_LENGTH) {
                 System.out.print(this.score);
+            }
+            scoreSequence.deleteCharAt(0);
+            scoreSequence.append(newValue);
+            if (scoreSequence.toString().equals(RECIPE_FINAL)) {
+                recipesBefore = numberOfRecipes - 6;
             }
         }
     }

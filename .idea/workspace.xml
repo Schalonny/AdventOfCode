@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+            <state relative-caret-position="135">
+              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -105,10 +105,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="149" />
+    <option name="x" value="259" />
     <option name="y" value="27" />
     <option name="width" value="1107" />
-    <option name="height" value="741" />
+    <option name="height" value="555" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -412,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561462617551</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Day 14, first task done, second uncomplite">
+      <created>1561980772458</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1561980772458</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -508,7 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day7 SleightInstruction; skeleton" />
     <MESSAGE value="Day7 SleightInstruction - sleight first task solved" />
     <MESSAGE value="Day7 SleightInstruction - second task done, and clean code" />
     <MESSAGE value="Cleaning code of Day1, orginize it and simplyfy" />
@@ -533,7 +539,8 @@
     <MESSAGE value="Day 13, both tasks done" />
     <MESSAGE value="Day 14, first task skelleton, should work" />
     <MESSAGE value="Day 14, first task skelleton, working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task skelleton, working" />
+    <MESSAGE value="Day 14, first task done, second uncomplite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task done, second uncomplite" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -911,8 +918,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+        <state relative-caret-position="135">
+          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
         </state>
       </provider>
     </entry>
