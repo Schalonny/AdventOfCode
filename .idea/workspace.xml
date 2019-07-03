@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -419,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561980772458</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Day 14, Both task done (without smooth answer)">
+      <created>1562060460549</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1562060460549</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -433,8 +439,8 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22801302" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39739415" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22801302" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -515,7 +521,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day7 SleightInstruction - sleight first task solved" />
     <MESSAGE value="Day7 SleightInstruction - second task done, and clean code" />
     <MESSAGE value="Cleaning code of Day1, orginize it and simplyfy" />
     <MESSAGE value="Cleaning code of Day2, organize it and (nearly) simplyfy" />
@@ -540,7 +545,8 @@
     <MESSAGE value="Day 14, first task skelleton, should work" />
     <MESSAGE value="Day 14, first task skelleton, working" />
     <MESSAGE value="Day 14, first task done, second uncomplite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 14, first task done, second uncomplite" />
+    <MESSAGE value="Day 14, Both task done (without smooth answer)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 14, Both task done (without smooth answer)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -918,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day14/ChocolateCharts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="72" column="33" lean-forward="true" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
         </state>
       </provider>
     </entry>
