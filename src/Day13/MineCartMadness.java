@@ -78,16 +78,16 @@ public class MineCartMadness implements Riddle {
                 cart2.isStillOnTrack);
     }
 
-    private void drawOnMap(int cartID, boolean goOutRatherThanIn) {
-        String toDraw;
-        if (goOutRatherThanIn) {
-            toDraw = Character.toString(carts.get(cartID).roadUnder);
+    private void drawOnMap(int cartID, boolean stepOutTheSquareRatherThanIn) {
+        String whatToDraw;
+        if (stepOutTheSquareRatherThanIn) {
+            whatToDraw = Character.toString(carts.get(cartID).roadUnder);
         } else {
-            toDraw = Character.toString(carts.get(cartID).direction);
+            whatToDraw = Character.toString(carts.get(cartID).direction);
         }
         int row = carts.get(cartID).y;
         int column = carts.get(cartID).x;
-        tunnels.get(row).replace(column, column + 1, toDraw);
+        tunnels.get(row).replace(column, column + 1, whatToDraw);
     }
 
 

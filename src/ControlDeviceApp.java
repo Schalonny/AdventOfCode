@@ -68,6 +68,6 @@ public class ControlDeviceApp {
         // new MineCartMadness().findSolution();
 
         // Day 14
-        new ChocolateCharts().findSolution();
+        //new ChocolateCharts().findSolution();
     }
 }
