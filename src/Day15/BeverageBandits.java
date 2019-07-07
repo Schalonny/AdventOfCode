@@ -10,6 +10,7 @@ public class BeverageBandits implements Riddle {
     private static final String FILE = "./src/Day15/fightMap";
     private ArrayList<StringBuilder> map;
     private ArrayList<Creature> creatures;
+    private int[][] distances;
 
     public BeverageBandits() {
         ImportFromFile importFromFile = new ImportFromFile();
@@ -22,6 +23,16 @@ public class BeverageBandits implements Riddle {
                 } else if (line.charAt(x) == 'G') {
                     creatures.add(new Creature(false, x, map.indexOf(line)));
                 }
+            }
+        }
+        distances = new int[map.get(0).length()][map.size()];
+        clearDistances();
+    }
+
+    private void clearDistances() {
+        for (int[] distance : distances) {
+            for (int i : distance) {
+                distance[i]=1024;
             }
         }
     }
@@ -86,7 +97,21 @@ public class BeverageBandits implements Riddle {
         }
 
         void calculateDistance(Creature target){
+            int currentDistance = 0;
+            checkDistance(target.x, target.y,currentDistance);
+            //TODO: wybierz z mapy DISTANCES sąsiadujące pola o najniższej wartości.
+            clearDistances();
 
+        }
+
+        private void checkDistance(int x, int y, int currentDistance){
+            if (map.get(y).charAt(x)=='.' && distances[x][y]>currentDistance) {
+                distances[x][y]=currentDistance;
+                checkDistance(x-1,y,currentDistance+1);
+                checkDistance(x,y-1,currentDistance+1);
+                checkDistance(x+1,y,currentDistance+1);
+                checkDistance(x,y+1,currentDistance+1);
+            }
         }
 
     }
