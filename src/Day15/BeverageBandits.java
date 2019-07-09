@@ -32,18 +32,49 @@ public class BeverageBandits implements Riddle {
     private void clearDistances() {
         for (int[] distance : distances) {
             for (int i : distance) {
-                distance[i]=1024;
+                distance[i] = 1024;
             }
         }
     }
 
     @Override
     public void findSolution() {
-
+        // while ELVES>0 AND GOBLINS>0
+        // sort creatures by the reading order
+        for (Creature currentCreature : creatures) {            // for each creature
+            // find all enemies
+            if (currentCreature.haveEnemyNearby()) {
+                // ATTACK (multiple targets solved by reading order)
+            } else {
+                // MOVE so:
+                // calculate distance to each enemy's adjacent square
+                // go to the nearest square adjacent to enemy if able
+            }
+        }
+        // print result
     }
 
+    int possibleMoves(int x, int y) {
+        int result = 0;
+        if (map.get(y - 1).charAt(x) == '.') {
+            result++;
+        }
+        if (map.get(y + 1).charAt(x) == '.') {
+            result++;
+        }
+        if (map.get(y).charAt(x - 1) == '.') {
+            result++;
+        }
+        if (map.get(y).charAt(x + 1) == '.') {
+            result++;
+        }
+        return result;
+    }
+
+
     private void sortCreatures() {
-        creatures.sort(Comparator.comparingInt(c -> c.y)); //TODO sortuje tylko po y, jak są posortowane x?
+        creatures.sort(Comparator.comparingInt(c -> c.y));
+        //TODO sortuje tylko po y, jak są posortowane x?
     }
 
 
@@ -96,24 +127,37 @@ public class BeverageBandits implements Riddle {
             }
         }
 
-        void calculateDistance(Creature target){
-            int currentDistance = 0;
-            checkDistance(target.x, target.y,currentDistance);
-            //TODO: wybierz z mapy DISTANCES sąsiadujące pola o najniższej wartości.
-            clearDistances();
-
-        }
-
-        private void checkDistance(int x, int y, int currentDistance){
-            if (map.get(y).charAt(x)=='.' && distances[x][y]>currentDistance) {
-                distances[x][y]=currentDistance;
-                checkDistance(x-1,y,currentDistance+1);
-                checkDistance(x,y-1,currentDistance+1);
-                checkDistance(x+1,y,currentDistance+1);
-                checkDistance(x,y+1,currentDistance+1);
+        void calculateDistance(Creature target) {
+            if (possibleMoves(this.x, this.y) == 1) {
+                //TODO: move to this only availble space
+            } else if (possibleMoves(this.x, this.y) != 0) {
+                int currentDistance = 0;
+                checkDistance(target.x, target.y, currentDistance);
+                //TODO: choose from distances[][] neighbour with lowest value
+                //TODO: move to the choosen space
+                clearDistances();
             }
         }
 
+        private void checkDistance(int x, int y, int currentDistance) {
+            if (map.get(y).charAt(x) == '.' && distances[x][y] > currentDistance) {
+                //won't be out of boundary, becouse there is # all around
+                distances[x][y] = currentDistance;
+                currentDistance++;
+                checkDistance(x - 1, y, currentDistance);
+                checkDistance(x, y - 1, currentDistance);
+                checkDistance(x + 1, y, currentDistance);
+                checkDistance(x, y + 1, currentDistance);
+            }
+
+
+        }
+
+        boolean haveEnemyNearby() {
+            char enemyChar = isElf ? 'G' : 'E';
+            return (map.get(y - 1).charAt(x) == enemyChar || map.get(y + 1).charAt(x) == enemyChar
+                    || map.get(y).charAt(x - 1) == enemyChar || map.get(y).charAt(x + 1) == enemyChar);
+        }
     }
 
     private enum Directions {
