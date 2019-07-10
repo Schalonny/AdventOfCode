@@ -8,9 +8,15 @@ import java.util.Comparator;
 
 public class BeverageBandits implements Riddle {
     private static final String FILE = "./src/Day15/fightMap";
+    private static final int INFINITY = 1024;
+    private static final char EMPTY_CHAR = '.';
+    private static final char ELF_CHAR = 'E';
+    private static final char GOBLIN_CHAR = 'G';
     private ArrayList<StringBuilder> map;
     private ArrayList<Creature> creatures;
     private int[][] distances;
+    private int numberOfElves = 0;
+    private int numberOfGoblins = 0;
 
     public BeverageBandits() {
         ImportFromFile importFromFile = new ImportFromFile();
@@ -18,10 +24,12 @@ public class BeverageBandits implements Riddle {
         creatures = new ArrayList<>();
         for (StringBuilder line : map) {
             for (int x = 0; x < line.length(); x++) {
-                if (line.charAt(x) == 'E') {
+                if (line.charAt(x) == ELF_CHAR) {
                     creatures.add(new Creature(true, x, map.indexOf(line)));
-                } else if (line.charAt(x) == 'G') {
+                    numberOfElves++;
+                } else if (line.charAt(x) == GOBLIN_CHAR) {
                     creatures.add(new Creature(false, x, map.indexOf(line)));
+                    numberOfGoblins++;
                 }
             }
         }
@@ -32,49 +40,80 @@ public class BeverageBandits implements Riddle {
     private void clearDistances() {
         for (int[] distance : distances) {
             for (int i : distance) {
-                distance[i] = 1024;
+                distance[i] = INFINITY;
             }
         }
     }
 
     @Override
     public void findSolution() {
-        // while ELVES>0 AND GOBLINS>0
-        // sort creatures by the reading order
-        for (Creature currentCreature : creatures) {            // for each creature
-            // find all enemies
-            if (currentCreature.haveEnemyNearby()) {
-                // ATTACK (multiple targets solved by reading order)
-            } else {
-                // MOVE so:
-                // calculate distance to each enemy's adjacent square
-                // go to the nearest square adjacent to enemy if able
+        int rounds = 0;
+        Directions attackDirection;
+        while (numberOfElves > 0 && numberOfGoblins > 0) {
+            sortCreatures();
+            for (Creature currentCreature : creatures) {
+                attackDirection = currentCreature.whereIsAdjacentEnemy();
+                if (attackDirection != Directions.NONE) {
+                    currentCreature.attack(attackDirection);
+                    if (numberOfElves * numberOfGoblins == 0) {
+                        break;
+                    }
+                } else {
+                    ArrayList<Integer[]> targetCoordinates = new ArrayList<>();
+                    creatures.stream()
+                            .filter(c -> c.isElf != currentCreature.isElf) //find all enemies
+                            .forEach(c -> targetCoordinates.addAll(getNeighbours(c.x, c.y, EMPTY_CHAR)));
+                    targetCoordinates.
+                    //TODO: calculate distance to each enemy's adjacent square
+                    // go to the nearest square adjacent to enemy if able
+                    //TODO: MOVE
+                }
+                rounds++;
             }
         }
-        // print result
+        int sumOfHP = 0;
+        for (Creature creature : creatures) {
+            if (!creature.isDead) {
+                sumOfHP += creature.hp;
+            }
+        }
+
+        System.out.println("After " + rounds + " rounds, the control number is " + sumOfHP * rounds);
     }
 
-    int possibleMoves(int x, int y) {
-        int result = 0;
-        if (map.get(y - 1).charAt(x) == '.') {
-            result++;
+    Creature findCreatureByLocation(int x, int y) {
+        for (Creature creature : creatures) {
+            if (creature.x == x && creature.y == y) {
+                return creature;
+            }
         }
-        if (map.get(y + 1).charAt(x) == '.') {
-            result++;
+        System.out.println("Creature not found!");
+        //here can be try/catch but it will never occur
+        return null;
+    }
+
+    ArrayList<Integer[]> getNeighbours(int x, int y, char what) {
+        ArrayList<Integer[]> result = new ArrayList<>();
+        Integer[] pair = new Integer[2];
+        for (int i = 0; i < 4; i++) {
+            pair[0] = x + (i % 2 * (i - 2)); // 0, -1, 0, +1
+            pair[1] = y + ((i + 1) % 2 * (i - 1)); // -1, 0 , +1 , 0
+
+            // x = 0, -1, +1, 0 <- this order will be great, can optymilize rest of code
+            // y = -1, 0, 0, +1
+            // we can change attack concept to attack(getNeihbours(x,y,ENEMY_CHAR).get(0))
+
+
+            if (map.get(pair[1]).charAt(pair[0]) == what) {
+                result.add(pair);
+            }
         }
-        if (map.get(y).charAt(x - 1) == '.') {
-            result++;
-        }
-        if (map.get(y).charAt(x + 1) == '.') {
-            result++;
-        }
-        return result;
+        return result; // return list of spaces adjacent to (x,y) contains "what"
     }
 
 
     private void sortCreatures() {
-        creatures.sort(Comparator.comparingInt(c -> c.y));
-        //TODO sortuje tylko po y, jak są posortowane x?
+        creatures.sort(Comparator.comparingInt(c -> c.y * INFINITY + c.x));
     }
 
 
@@ -96,7 +135,7 @@ public class BeverageBandits implements Riddle {
         }
 
         void move(Directions direction) {
-            map.get(y).replace(x, x + 1, ".");
+            map.get(y).replace(x, x + 1, String.valueOf(EMPTY_CHAR));
             switch (direction) {
                 case LEFT:
                     this.x--;
@@ -120,27 +159,58 @@ public class BeverageBandits implements Riddle {
             } else return "G";
         }
 
+        void attack(Directions direction) {
+            int x = this.x;
+            int y = this.y;
+            switch (direction) {
+                case RIGHT:
+                    x++;
+                    break;
+                case LEFT:
+                    x--;
+                    break;
+                case DOWN:
+                    y++;
+                    break;
+                case UP:
+                    y--;
+                    break;
+                case NONE:
+                    break;//never occur
+            }
+            findCreatureByLocation(x, y).loseLife(this.power);
+        }
+
         void loseLife(int damage) {
             this.hp -= damage;
             if (this.hp <= 0) {
                 this.isDead = true;
+                if (isElf) {
+                    numberOfElves--;
+                } else {
+                    numberOfGoblins--;
+                }
             }
         }
 
-        void calculateDistance(Creature target) {
-            if (possibleMoves(this.x, this.y) == 1) {
-                //TODO: move to this only availble space
-            } else if (possibleMoves(this.x, this.y) != 0) {
-                int currentDistance = 0;
-                checkDistance(target.x, target.y, currentDistance);
-                //TODO: choose from distances[][] neighbour with lowest value
-                //TODO: move to the choosen space
-                clearDistances();
+        void calculateDistanceTo(int x, int y) {
+            switch (getNeighbours(this.x, this.y, EMPTY_CHAR).size()) {
+                case 0:
+                    break;
+                case 1:
+                    //TODO: move to this only availble space
+                    break;
+                default:
+                    int currentDistance = 0;
+                    checkDistance(x, y, currentDistance);
+                    //TODO: choose from distances[][] neighbour with lowest value
+                    //TODO: move to the chosen space
+                    clearDistances();
             }
         }
 
         private void checkDistance(int x, int y, int currentDistance) {
-            if (map.get(y).charAt(x) == '.' && distances[x][y] > currentDistance) {
+            if (map.get(y).charAt(x) == EMPTY_CHAR && currentDistance < distances[x][y]) {
                 //won't be out of boundary, becouse there is # all around
                 distances[x][y] = currentDistance;
                 currentDistance++;
@@ -149,18 +219,49 @@ public class BeverageBandits implements Riddle {
                 checkDistance(x + 1, y, currentDistance);
                 checkDistance(x, y + 1, currentDistance);
             }
-
-
         }
 
-        boolean haveEnemyNearby() {
-            char enemyChar = isElf ? 'G' : 'E';
-            return (map.get(y - 1).charAt(x) == enemyChar || map.get(y + 1).charAt(x) == enemyChar
-                    || map.get(y).charAt(x - 1) == enemyChar || map.get(y).charAt(x + 1) == enemyChar);
+        Directions moveDirection(int minDistance) {
+            Directions result = Directions.NONE;
+            if (distances[x][y - 1] < minDistance) {
+                result = Directions.UP;
+                minDistance = distances[x][y - 1];
+            }
+            if (distances[x - 1][y] < minDistance) {
+                result = Directions.LEFT;
+                minDistance = distances[x - 1][y];
+            }
+            if (distances[x + 1][y] < minDistance) {
+                result = Directions.RIGHT;
+                minDistance = distances[x + 1][y];
+            }
+            if (distances[x][y + 1] < minDistance) {
+                result = Directions.DOWN;
+            }
+            return result;
+        }
+
+        Directions whereIsAdjacentEnemy() {
+            char enemyChar = isElf ? GOBLIN_CHAR : ELF_CHAR;
+            if (map.get(y - 1).charAt(x) == enemyChar) {
+                return Directions.UP;
+            }
+            if (map.get(y + 1).charAt(x) == enemyChar) {
+                return Directions.DOWN;
+            }
+            if (map.get(y).charAt(x - 1) == enemyChar) {
+                return Directions.LEFT;
+            }
+            if (map.get(y).charAt(x + 1) == enemyChar) {
+                return Directions.RIGHT;
+            }
+            return Directions.NONE;
+
         }
     }
 
-    private enum Directions {
-        LEFT, UP, RIGHT, DOWN
+    enum Directions {
+        DOWN, LEFT, NONE, RIGHT, UP
+
     }
 }
