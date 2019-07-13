@@ -4,6 +4,7 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class BeverageBandits implements Riddle {
@@ -53,24 +54,25 @@ public class BeverageBandits implements Riddle {
             sortCreatures();
             for (Creature currentCreature : creatures) {
                 attackDirection = currentCreature.whereIsAdjacentEnemy();
+                if (attackDirection == Directions.NONE) {
+                    ArrayList<Coordinates> targetCoordinates = new ArrayList<>();
+                    creatures.stream()
+                            .filter(c -> c.isElf != currentCreature.isElf) //find all enemies
+                            .forEach(c -> targetCoordinates.addAll(getNeighbours(c.x, c.y, EMPTY_CHAR)));
+                    Collections.sort(targetCoordinates);
+                    int minDistance = INFINITY;
+                    for (Coordinates target : targetCoordinates) {
+                        minDistance = calculateDistanceTo(target.x, target.y, currentCreature, minDistance);
+                    }
+                    if (minDistance < INFINITY) {
+                        currentCreature.move(currentCreature.toMove);
+                    }
+                }
+                attackDirection = currentCreature.whereIsAdjacentEnemy();
                 if (attackDirection != Directions.NONE) {
                     currentCreature.attack(attackDirection);
                     if (numberOfElves * numberOfGoblins == 0) {
                         break;
-                    }
-                } else {
-                    ArrayList<Integer[]> targetCoordinates = new ArrayList<>();
-                    creatures.stream()
-                            .filter(c -> c.isElf != currentCreature.isElf) //find all enemies
-                            .forEach(c -> targetCoordinates.addAll(getNeighbours(c.x, c.y, EMPTY_CHAR)));
-                    targetCoordinates.sort //TODO sort by reading order
-                    int minDistance = INFINITY;
-                    for (Integer[] target : targetCoordinates) {
-                        minDistance = calculateDistanceTo(target[0], target[1], currentCreature, minDistance);
-                    }
-                    //TODO if scope above will go by reading order we are ready to go!
-                    if (minDistance < INFINITY) {
-                        currentCreature.move(currentCreature.toMove);
                     }
                 }
                 rounds++;
@@ -97,13 +99,27 @@ public class BeverageBandits implements Riddle {
         return null;
     }
 
-    ArrayList<Integer[]> getNeighbours(int x, int y, char what) {
-        ArrayList<Integer[]> result = new ArrayList<>();
-        Integer[] pair = new Integer[2];
-        for (int i = 0; i < 4; i++) {
+    ArrayList<Coordinates> getNeighbours(int x, int y, char what) {
+        ArrayList<Coordinates> result = new ArrayList<>();
+        Coordinates pair = new Coordinates(0,-1);
+        if (map.get(pair.y + y).charAt(pair.x + x) == what) {
+            result.add(pair);
+        }
+        Coordinates pair2 = new Coordinates(-1,0);
+        if (map.get(pair2.y + y).charAt(pair2.x + x) == what) {
+            result.add(pair);
+        }
+        Coordinates pair3 = new Coordinates(1,0);
+        if (map.get(pair3.y + y).charAt(pair3.x + x) == what) {
+            result.add(pair);
+        }
+        Coordinates pair4 = new Coordinates(0,1);
+        if (map.get(pair4.y + y).charAt(pair4.x + x) == what) {
+            result.add(pair);
+        }
+/*        for (int i = 0; i < 4; i++) {
             pair[0] = x + (i % 2 * (i - 2)); // 0, -1, 0, +1
             pair[1] = y + ((i + 1) % 2 * (i - 1)); // -1, 0 , +1 , 0
-            //TODO:
             // x = 0, -1, +1, 0 <- this order will be great, can optimize rest of code
             // y = -1, 0, 0, +1
             // we can change attack concept to attack(getNeighbours(x,y,ENEMY_CHAR).get(0))
@@ -112,7 +128,7 @@ public class BeverageBandits implements Riddle {
             if (map.get(pair[1]).charAt(pair[0]) == what) {
                 result.add(pair);
             }
-        }
+        }*/
         return result; // return list of spaces adjacent to (x,y) contains "what"
     }
 
@@ -124,12 +140,13 @@ public class BeverageBandits implements Riddle {
     private int calculateDistanceTo(int x, int y, Creature attackingCreature, int minDistance) {
         if (getNeighbours(attackingCreature.x, attackingCreature.y, EMPTY_CHAR).size() != 0) {
             int currentDistance = 0;
-            checkDistance(x, y, currentDistance);
-            for (Integer[] neighbour : getNeighbours(attackingCreature.x, attackingCreature.y, EMPTY_CHAR)) {
-                if (distances[neighbour[0]][neighbour[1]] < minDistance) {
-                    minDistance = distances[neighbour[0]][neighbour[1]];
-                    //TODO: steal its wrong order (non reading order) - issue is in getNeighbour order of neighbours
-                    attackingCreature.toMove = getDirection(attackingCreature.x, attackingCreature.y, neighbour[0], neighbour[1]);
+            fillMapOfDistances(x, y, currentDistance);
+            for (Coordinates neighbour : getNeighbours(attackingCreature.x, attackingCreature.y, EMPTY_CHAR)) {
+                if (distances[neighbour.x][neighbour.y] < minDistance) {
+                    minDistance = distances[neighbour.x][neighbour.y];
+                    //thanks to reading order of getNeighbour first will be determine distance to first in reading order
+                    // and than others (so if distance is equal, we take first (so in reading order)
+                    attackingCreature.toMove = getDirection(attackingCreature.x, attackingCreature.y, neighbour.x, neighbour.y);
                 }
             }
             clearDistances();
@@ -137,15 +154,15 @@ public class BeverageBandits implements Riddle {
         return minDistance;
     }
 
-    private void checkDistance(int x, int y, int currentDistance) {
+    private void fillMapOfDistances(int x, int y, int currentDistance) {
         if (map.get(y).charAt(x) == EMPTY_CHAR && currentDistance < distances[x][y]) {
             //won't be out of boundary, becouse there is # all around
             distances[x][y] = currentDistance;
             currentDistance++;
-            checkDistance(x - 1, y, currentDistance);
-            checkDistance(x, y - 1, currentDistance);
-            checkDistance(x + 1, y, currentDistance);
-            checkDistance(x, y + 1, currentDistance);
+            fillMapOfDistances(x - 1, y, currentDistance);
+            fillMapOfDistances(x, y - 1, currentDistance);
+            fillMapOfDistances(x + 1, y, currentDistance);
+            fillMapOfDistances(x, y + 1, currentDistance);
         }
     }
 
@@ -282,5 +299,20 @@ public class BeverageBandits implements Riddle {
     enum Directions {
         DOWN, LEFT, NONE, RIGHT, UP
 
+    }
+
+    private class Coordinates implements Comparable<Coordinates> {
+        int x;
+        int y;
+
+        public Coordinates(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public int compareTo(Coordinates o) {
+            return 100 * (this.y - o.y) + (this.x - o.x);
+        }
     }
 }
