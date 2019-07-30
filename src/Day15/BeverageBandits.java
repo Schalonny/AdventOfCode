@@ -39,9 +39,9 @@ public class BeverageBandits implements Riddle {
     }
 
     private void clearDistances() {
-        for (int[] distance : distances) {
-            for (int i : distance) {
-                distance[i] = INFINITY;
+        for (int i = 0; i < map.size(); i++) {
+            for (int j = 0; j < map.get(0).length(); j++) {
+                distances[i][j] = INFINITY;
             }
         }
     }
@@ -49,6 +49,7 @@ public class BeverageBandits implements Riddle {
     @Override
     public void findSolution() {
         int rounds = 0;
+        int sumOfHP = 0;
         Directions attackDirection;
         while (numberOfElves > 0 && numberOfGoblins > 0) {
             sortCreatures();
@@ -58,6 +59,7 @@ public class BeverageBandits implements Riddle {
                     ArrayList<Coordinates> targetCoordinates = new ArrayList<>();
                     creatures.stream()
                             .filter(c -> c.isElf != currentCreature.isElf) //find all enemies
+                            .filter(c -> !c.isDead) //filter by only living ones
                             .forEach(c -> targetCoordinates.addAll(getNeighbours(c.x, c.y, EMPTY_CHAR)));
                     Collections.sort(targetCoordinates);
                     int minDistance = INFINITY;
@@ -75,14 +77,15 @@ public class BeverageBandits implements Riddle {
                         break;
                     }
                 }
-                rounds++;
             }
-        }
-        int sumOfHP = 0;
-        for (Creature creature : creatures) {
-            if (!creature.isDead) {
-                sumOfHP += creature.hp;
+            rounds++;
+            sumOfHP = 0;
+            for (Creature creature : creatures) {
+                if (!creature.isDead) {
+                    sumOfHP += creature.hp;
+                }
             }
+            System.out.println(rounds + ". " + sumOfHP);
         }
 
         System.out.println("After " + rounds + " rounds, the control number is " + sumOfHP * rounds);
@@ -90,7 +93,7 @@ public class BeverageBandits implements Riddle {
 
     Creature findCreatureByLocation(int x, int y) {
         for (Creature creature : creatures) {
-            if (creature.x == x && creature.y == y) {
+            if (creature.x == x && creature.y == y && !creature.isDead) {
                 return creature;
             }
         }
@@ -101,20 +104,20 @@ public class BeverageBandits implements Riddle {
 
     ArrayList<Coordinates> getNeighbours(int x, int y, char what) {
         ArrayList<Coordinates> result = new ArrayList<>();
-        Coordinates pair = new Coordinates(0,-1);
-        if (map.get(pair.y + y).charAt(pair.x + x) == what) {
+        Coordinates pair = new Coordinates(x,y-1);
+        if (map.get(pair.y).charAt(pair.x) == what) {
             result.add(pair);
         }
-        Coordinates pair2 = new Coordinates(-1,0);
-        if (map.get(pair2.y + y).charAt(pair2.x + x) == what) {
+        Coordinates pair2 = new Coordinates(x-1,y);
+        if (map.get(pair2.y).charAt(pair2.x) == what) {
             result.add(pair);
         }
-        Coordinates pair3 = new Coordinates(1,0);
-        if (map.get(pair3.y + y).charAt(pair3.x + x) == what) {
+        Coordinates pair3 = new Coordinates(x+1,y);
+        if (map.get(pair3.y).charAt(pair3.x) == what) {
             result.add(pair);
         }
-        Coordinates pair4 = new Coordinates(0,1);
-        if (map.get(pair4.y + y).charAt(pair4.x + x) == what) {
+        Coordinates pair4 = new Coordinates(x,y+1);
+        if (map.get(pair4.y).charAt(pair4.x) == what) {
             result.add(pair);
         }
 /*        for (int i = 0; i < 4; i++) {
@@ -199,7 +202,7 @@ public class BeverageBandits implements Riddle {
         }
 
         void move(Directions direction) {
-            map.get(y).replace(x, x + 1, String.valueOf(EMPTY_CHAR));
+            map.get(this.y).replace(this.x, this.x + 1, String.valueOf(EMPTY_CHAR));
             switch (direction) {
                 case LEFT:
                     this.x--;
@@ -214,7 +217,7 @@ public class BeverageBandits implements Riddle {
                     this.y++;
                     break;
             }
-            map.get(y).replace(x, x + 1, creatureSymbol());
+            map.get(this.y).replace(this.x, this.x + 1, creatureSymbol());
         }
 
         String creatureSymbol() {
@@ -249,6 +252,7 @@ public class BeverageBandits implements Riddle {
             this.hp -= damage;
             if (this.hp <= 0) {
                 this.isDead = true;
+                map.get(this.y).replace(x,x+1, String.valueOf(EMPTY_CHAR));
                 if (isElf) {
                     numberOfElves--;
                 } else {

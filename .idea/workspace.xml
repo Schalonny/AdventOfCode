@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day13/MineCartMadness.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,14 +34,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Day15/BeverageBandits.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-488">
-              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+            <state relative-caret-position="180">
+              <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4652#4653#0" expanded="true" />
-                <element signature="e#4734#4735#0" expanded="true" />
-                <element signature="e#10830#10831#0" expanded="true" />
-                <element signature="e#10869#10870#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,10 +151,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="603" />
-    <option name="y" value="46" />
-    <option name="width" value="767" />
-    <option name="height" value="736" />
+    <option name="x" value="624" />
+    <option name="y" value="27" />
+    <option name="width" value="742" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -164,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -205,7 +204,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -534,21 +532,28 @@
       <option name="project" value="LOCAL" />
       <updated>1562922917226</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Day 15.5 IndexOutOfBOund in place that it shouldn't have occur">
+      <created>1563043466006</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1563043466007</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23030303" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25681818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32736155" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22801302" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22801302" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,7 +635,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 8, first riddle - add comments" />
     <MESSAGE value="Day 8, first riddle - edit comments" />
     <MESSAGE value="Day 8, second riddle, add missing files" />
     <MESSAGE value="Fix minor errors; Implement Interface to each class" />
@@ -655,7 +659,8 @@
     <MESSAGE value="Day 15.3 skeletton of solution" />
     <MESSAGE value="Day 15.3 neighbours, attack, move done" />
     <MESSAGE value="Day 15.4 TODO reading order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 15.4 TODO reading order" />
+    <MESSAGE value="Day 15.5 IndexOutOfBOund in place that it shouldn't have occur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 15.5 IndexOutOfBOund in place that it shouldn't have occur" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Day3/fabricClaims">
@@ -1033,14 +1038,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Day15/BeverageBandits.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-488">
-          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
+        <state relative-caret-position="180">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4652#4653#0" expanded="true" />
-            <element signature="e#4734#4735#0" expanded="true" />
-            <element signature="e#10830#10831#0" expanded="true" />
-            <element signature="e#10869#10870#0" expanded="true" />
           </folding>
         </state>
       </provider>
