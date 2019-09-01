@@ -128,6 +128,12 @@ public class BeverageBandits implements Riddle {
         // by wypełnić mapę odległośći najpierw sprawdzamy czy dane miejsce jest puste
         // i czy aktualny dystans jest mniejszy od tego, który znajduje się w tym polu
         // (w ten sposób miejsce docelowe nie będzie mogło być wypełnione żądaną wielkością!) - ale tego nie potrzeba
+        //TODO jeżeli jestem w sąsiedztwie atakującego  -----------> (abs(x-x0)+abs(y-y0)==1)
+        // , to jeśli current distance jest mniejszy niż MINIMALNY DO TEJ PORY --> nowa zmienna globalna
+        // (lub równy w tym POI które rozpatrujemy, ale jest wcześniej w kolejności czytania)
+        // --> if cd<minimalny.value || (cd==minimalny.value && minimalny.cd==cd) -> minimalny.direction==getDirection(attacker.x,at.y,x,y)
+        // to zapamiętaj kierunek w którym od ATAKUJĄCEGO jest aktualne pole.
+        // return minimalny.direction
         if (map.get(y).charAt(x) == EMPTY_CHAR && currentDistance < distances[x][y]) {
             //won't be out of boundary, becouse there is # all around
             distances[x][y] = currentDistance;
@@ -189,7 +195,10 @@ public class BeverageBandits implements Riddle {
         return Directions.NONE; //never occur
     }
 
-    private class Creature {
+
+
+
+    class Creature {
         boolean isElf;
         boolean isDead;
         int x;
@@ -310,29 +319,12 @@ public class BeverageBandits implements Riddle {
                 return Directions.DOWN;
             }
             return Directions.NONE;
-
         }
-    }
-
-    enum Directions {
-        DOWN, LEFT, NONE, RIGHT, UP
-    }
-
-    private static class Coordinates implements Comparable<Coordinates> {
-        int x;
-        int y;
-
-        private Coordinates(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public int compareTo(Coordinates o) {
-            return 100 * (this.y - o.y) + (this.x - o.x);
-        }
-        // Ta klasa ma za zadanie porównywać pozycję stworzeń by rozstrzygać remisy, zgodnie z treścią
-        // zadania, jeśli mogę wybrać klika opcji, powinniśmy wybierać poczynając od tego który jest wyżej,
-        // a jeśli są na tym samym poziomie to tego, który jest z lewej.
     }
 }
+
+// Program ma errora w następującej sytuacji:
+// E#G...E
+// ...####
+// do obu są 3 kroki, ale ten z lewej powinien być pierwszym targetem,
+// w kolejności czytania wybieram kierunek, zamiast pozycji przeciwnika.
