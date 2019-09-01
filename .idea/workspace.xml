@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day15/Coordinates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day15/Directions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day15/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15/Coordinates.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -385,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567277365459</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Day 15.8 class moving">
+      <created>1567324800335</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1567324800335</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -416,7 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 9, first task done" />
     <MESSAGE value="Day 9, redo all day, using more efficient double linked list, done second task" />
     <MESSAGE value="Day 10, begining, class and private class created." />
     <MESSAGE value="Day 10, both tasks, some ugly code" />
@@ -441,7 +446,8 @@
     <MESSAGE value="Day 15.6 Only 2 deads(?)" />
     <MESSAGE value="Day 15.7 Examples works, main task don't" />
     <MESSAGE value="Day 15.7 introduction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 15.7 introduction" />
+    <MESSAGE value="Day 15.8 class moving" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 15.8 class moving" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
