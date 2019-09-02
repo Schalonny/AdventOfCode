@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/lukasz.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day16/Opcode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day16/Sample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day16/samples" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day16/testProgram" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15/BeverageBandits.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day15/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Day16" />
       <recent name="" />
     </key>
   </component>
@@ -391,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567324800335</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Day 15 COMPLETED!!!">
+      <created>1567361776067</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1567361776067</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -422,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 9, redo all day, using more efficient double linked list, done second task" />
     <MESSAGE value="Day 10, begining, class and private class created." />
     <MESSAGE value="Day 10, both tasks, some ugly code" />
     <MESSAGE value="Day 11, first task done, second have some problems (I dnt know)" />
@@ -447,7 +460,8 @@
     <MESSAGE value="Day 15.7 Examples works, main task don't" />
     <MESSAGE value="Day 15.7 introduction" />
     <MESSAGE value="Day 15.8 class moving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 15.8 class moving" />
+    <MESSAGE value="Day 15 COMPLETED!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 15 COMPLETED!!!" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
