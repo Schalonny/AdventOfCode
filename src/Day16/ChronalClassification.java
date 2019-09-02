@@ -7,13 +7,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ChronalClassification implements Riddle {
 
     private static final String FILE = "./src/Day16/samples";
+    private static final String FILE_TO_EXECUTE = "./src/Day16/testProgram";
     private ArrayList<Sample> samples;
     private ArrayList<Opcode> opcodes;
-    private int samplesWithAtLeast3possibilities;
+    private ArrayList<Sample> finalInstructions;
 
     private void importData() {
         samples = new ArrayList<>();
@@ -39,6 +41,19 @@ public class ChronalClassification implements Riddle {
                 IOException e) {
             e.getMessage();
         }
+        finalInstructions = new ArrayList<>();
+        try
+                (FileReader fileReader = new FileReader(new File(FILE_TO_EXECUTE));
+                 BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+
+            while (((line = bufferedReader.readLine()) != null)) {
+                instructions = fillInstructions(line);
+                finalInstructions.add(new Sample(instructions));
+            }
+        } catch (
+                IOException e) {
+            e.getMessage();
+        }
     }
 
     private Integer[] fillInstructions(String line) {
@@ -53,7 +68,7 @@ public class ChronalClassification implements Riddle {
     private Integer[] fillRegister(String line) {
         Integer[] result = new Integer[4];
         for (int i = 0; i < 4; i++) {
-            result[i]=(Integer.valueOf(line.substring(9 + 3 * i, 10 + 3 * i)));
+            result[i] = (Integer.valueOf(line.substring(9 + 3 * i, 10 + 3 * i)));
         }
         return result;
     }
@@ -70,36 +85,16 @@ public class ChronalClassification implements Riddle {
         opcodes.add(new Opcode("bori", a -> a.getRegister()[a.getInstr()[1]] | a.getInstr()[2]));
         opcodes.add(new Opcode("setr", a -> a.getRegister()[a.getInstr()[1]]));
         opcodes.add(new Opcode("seti", a -> a.getInstr()[1]));
-        opcodes.add(new Opcode("gtir", a -> {
-            if (a.getInstr()[1] > a.getRegister()[a.getInstr()[2]]) {
-                return 1;
-            } else return 0;
-        }));
-        opcodes.add(new Opcode("gtri", a -> {
-            if (a.getRegister()[a.getInstr()[1]] > a.getInstr()[2]) {
-                return 1;
-            } else return 0;
-        }));
-        opcodes.add(new Opcode("gtrr", a -> {
-            if (a.getRegister()[a.getInstr()[1]] > a.getRegister()[a.getInstr()[2]]) {
-                return 1;
-            } else return 0;
-        }));
-        opcodes.add(new Opcode("eqir", a -> {
-            if (a.getInstr()[1].equals(a.getRegister()[a.getInstr()[2]])) {
-                return 1;
-            } else return 0;
-        }));
-        opcodes.add(new Opcode("eqri", a -> {
-            if (a.getRegister()[a.getInstr()[1]].equals(a.getInstr()[2])) {
-                return 1;
-            } else return 0;
-        }));
-        opcodes.add(new Opcode("eqrr", a -> {
-            if (a.getRegister()[a.getInstr()[1]].equals(a.getRegister()[a.getInstr()[2]])) {
-                return 1;
-            } else return 0;
-        }));
+        opcodes.add(new Opcode("gtir", a -> ifTrueReturnOne(a.getInstr()[1] > a.getRegister()[a.getInstr()[2]])));
+        opcodes.add(new Opcode("gtri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getInstr()[2])));
+        opcodes.add(new Opcode("gtrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getRegister()[a.getInstr()[2]])));
+        opcodes.add(new Opcode("eqir", a -> ifTrueReturnOne(a.getInstr()[1].equals(a.getRegister()[a.getInstr()[2]]))));
+        opcodes.add(new Opcode("eqri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getInstr()[2]))));
+        opcodes.add(new Opcode("eqrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getRegister()[a.getInstr()[2]]))));
+    }
+
+    private int ifTrueReturnOne(boolean statement) {
+        return statement ? 1 : 0;
     }
 
     @Override
@@ -107,43 +102,50 @@ public class ChronalClassification implements Riddle {
         importData();
         System.out.println(howManySamples());
         assignNumbersToOpcodes();
+        opcodes.sort(Comparator.comparingInt(Opcode::getNumber));
+        Sample workingSample = new Sample(finalInstructions.get(0).getRegister());
+        for (Sample data : finalInstructions) {
+            workingSample.setInstr(data.getInstr());
+            workingSample.setRegister(opcodes.get(data.getIdOfOpcode()).execute(workingSample));
+            System.out.println(workingSample.getRegister()[0]);
+        }
     }
 
     private void assignNumbersToOpcodes() {
         ArrayList<Opcode> opcodesToWork = new ArrayList<>(opcodes);
         int discoveredNumber = 16;
-        while (samples.size()>0) {
+        while (samples.size() > 0) {
             for (Sample sample : samples) {
                 int possibleOpcodes = 0;
                 int id = 16;
                 for (Opcode opcode : opcodesToWork) {
-                    if (opcode.checkIfMatch(sample)){
+                    if (opcode.checkIfMatch(sample)) {
                         possibleOpcodes++;
                         id = sample.getIdOfOpcode();
                         opcode.giveNumber(id);
                     }
                 }
-                if (possibleOpcodes==1){
-                    discoveredNumber=id;
+                if (possibleOpcodes == 1) {
+                    discoveredNumber = id;
                     break;
                 }
             }
             int finalDiscoveredNumber = discoveredNumber;
-            samples.removeIf(sample -> sample.getIdOfOpcode()== finalDiscoveredNumber);
+            samples.removeIf(sample -> sample.getIdOfOpcode() == finalDiscoveredNumber);
             opcodesToWork.removeIf(opcode -> opcode.getNumber() == finalDiscoveredNumber);
         }
     }
 
-    private int howManySamples(){
-        samplesWithAtLeast3possibilities=0;
+    private int howManySamples() {
+        int samplesWithAtLeast3possibilities = 0;
         for (Sample sample : samples) {
             int possibleOpcodes = 0;
             for (Opcode opcode : opcodes) {
-                if (opcode.checkIfMatch(sample)){
+                if (opcode.checkIfMatch(sample)) {
                     possibleOpcodes++;
                 }
             }
-            if (possibleOpcodes>=3){
+            if (possibleOpcodes >= 3) {
                 samplesWithAtLeast3possibilities++;
             }
         }

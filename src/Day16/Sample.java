@@ -11,6 +11,12 @@ class Sample {
         this.registerAfter = registerAfter;
     }
 
+    Sample(Integer[] instructions){
+        this.register = instructions;
+        this.instr = instructions;
+        this.registerAfter = instructions;
+    }
+
     public int getIdOfOpcode(){
         return this.instr[0];
     }
@@ -25,5 +31,17 @@ class Sample {
 
     public Integer[] getRegisterAfter() {
         return registerAfter;
+    }
+
+    public void setRegister(Integer[] register) {
+        this.register = register;
+    }
+
+    public void setInstr(Integer[] instr) {
+        this.instr = instr;
+    }
+
+    public void setRegisterAfter(Integer[] data) {
+        this.registerAfter = data;
     }
 }

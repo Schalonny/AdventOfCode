@@ -19,13 +19,17 @@ class Opcode {
                 ", " + number + '}';
     }
 
-    Integer[] execute (Integer[] input){
-        //TODO
-        return input;
+    Integer[] execute (Sample input){
+        int positionToChange = input.getInstr()[3];
+        Integer[] data = input.getRegister();
+        data[positionToChange]=function.apply(input);
+        return data;
     }
 
     boolean checkIfMatch(Sample sample){
-        return sample.getRegisterAfter()[sample.getInstr()[3]].equals(function.apply(sample));
+        int positionToCheck = sample.getInstr()[3];
+        int predictedResult = sample.getRegisterAfter()[positionToCheck];
+        return predictedResult==function.apply(sample);
     }
 
     void giveNumber(int number) {
