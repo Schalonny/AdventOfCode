@@ -5,6 +5,7 @@ import Day13.MineCartMadness;
 import Day14.ChocolateCharts;
 import Day15.BeverageBandits;
 import Day16.ChronalClassification;
+import Day17.ReservoirResearch;
 import Day8.NavigationSystem;
 import Day9.MarbleMania;
 import ImportData.ImportFromFile;
@@ -76,6 +77,9 @@ public class ControlDeviceApp {
         //new BeverageBandits().findSolution();
 
         // Day 16
-        new ChronalClassification().findSolution();
+        // new ChronalClassification().findSolution();
+
+        // Day 17
+        new ReservoirResearch().findSolution();
     }
 }

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day17/clay" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day16/Opcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/Opcode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +34,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -413,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567458573780</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Day 16 completed">
+      <created>1567500172257</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1567500172257</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,7 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 10, both tasks, some ugly code" />
     <MESSAGE value="Day 11, first task done, second have some problems (I dnt know)" />
     <MESSAGE value="Day 11, completed" />
     <MESSAGE value="Day 11, comments added" />
@@ -469,7 +480,8 @@
     <MESSAGE value="Day 15.8 class moving" />
     <MESSAGE value="Day 15 COMPLETED!!!" />
     <MESSAGE value="Day 16 part 1 completede, but code isn't ready for part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 16 part 1 completede, but code isn't ready for part 2" />
+    <MESSAGE value="Day 16 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 16 completed" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -477,21 +489,5 @@
         <watch expression="targetCoordinates.get(0)" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
