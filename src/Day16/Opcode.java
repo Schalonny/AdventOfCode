@@ -19,28 +19,23 @@ class Opcode {
                 ", " + number + '}';
     }
 
-    Integer[] execute (Sample input){
-        int positionToChange = input.getInstr()[3];
+    Integer[] executeAndProduceNewRegister(Sample input){
         Integer[] data = input.getRegister();
-        data[positionToChange]=function.apply(input);
+        data[input.getInstr()[3]] = function.apply(input);
         return data;
     }
 
     boolean checkIfMatch(Sample sample){
         int positionToCheck = sample.getInstr()[3];
         int predictedResult = sample.getRegisterAfter()[positionToCheck];
-        return predictedResult==function.apply(sample);
+        return predictedResult == function.apply(sample);
     }
 
-    void giveNumber(int number) {
+    void setNumber(int number) {
         this.number = number;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getNumber() {
+   int getNumber() {
         return number;
     }
 }

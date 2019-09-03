@@ -100,15 +100,16 @@ public class ChronalClassification implements Riddle {
     @Override
     public void findSolution() {
         importData();
-        System.out.println(howManySamples());
+        System.out.println(howManySamples() + " samples behave like 3 or more opcodes.");
         assignNumbersToOpcodes();
         opcodes.sort(Comparator.comparingInt(Opcode::getNumber));
-        Sample workingSample = new Sample(finalInstructions.get(0).getRegister());
+        Integer[] zeros={0,0,0,0};
+        Sample workingSample = new Sample(zeros);
         for (Sample data : finalInstructions) {
             workingSample.setInstr(data.getInstr());
-            workingSample.setRegister(opcodes.get(data.getIdOfOpcode()).execute(workingSample));
-            System.out.println(workingSample.getRegister()[0]);
+            workingSample.setRegister(opcodes.get(data.getIdOfOpcode()).executeAndProduceNewRegister(workingSample));
         }
+        System.out.println("Last register will start from: " + workingSample.getRegister()[0]);
     }
 
     private void assignNumbersToOpcodes() {
@@ -122,7 +123,7 @@ public class ChronalClassification implements Riddle {
                     if (opcode.checkIfMatch(sample)) {
                         possibleOpcodes++;
                         id = sample.getIdOfOpcode();
-                        opcode.giveNumber(id);
+                        opcode.setNumber(id);
                     }
                 }
                 if (possibleOpcodes == 1) {

@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day16/Opcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/Opcode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day16/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/Sample.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -407,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567428646608</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Day 16 part 1 completede, but code isn't ready for part 2">
+      <created>1567458573780</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1567458573780</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
