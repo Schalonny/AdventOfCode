@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day17/clay" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Add Day 4 - searching for sleeper">
-      <created>1560119130334</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1560119130334</updated>
     </task>
     <task id="LOCAL-00002" summary="Add Day 5 - polymer problem">
       <created>1560197837759</created>
@@ -425,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567500172257</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Day 17 Drop model, map ready,">
+      <created>1567507252900</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1567507252901</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 11, first task done, second have some problems (I dnt know)" />
     <MESSAGE value="Day 11, completed" />
     <MESSAGE value="Day 11, comments added" />
     <MESSAGE value="Day 12, completed, comments, clean" />
@@ -481,7 +477,8 @@
     <MESSAGE value="Day 15 COMPLETED!!!" />
     <MESSAGE value="Day 16 part 1 completede, but code isn't ready for part 2" />
     <MESSAGE value="Day 16 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 16 completed" />
+    <MESSAGE value="Day 17 Drop model, map ready," />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Drop model, map ready," />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
