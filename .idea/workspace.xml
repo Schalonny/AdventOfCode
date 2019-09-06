@@ -4,6 +4,7 @@
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day17/clay" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/clay" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -481,6 +482,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Day 17 Drop model, map ready," />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Day17/ReservoirResearch.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="targetCoordinates.get(0)" />

@@ -7,13 +7,14 @@ import java.util.ArrayList;
 
 public class ReservoirResearch implements Riddle {
     private static final String FILE = "./src/Day17/clay";
-    private static final char CLAY_SYMBOL = '#';
-    private static final char SAND_SYMBOL = '.';
-    private static final char FLOW_SYMBOL = '|';
+    private static final char CLAY_SYMBOL = 'X';
+    private static final char SAND_SYMBOL = '_';
+    private static final char FLOW_SYMBOL = 'V';
     private static final char WATER_SYMBOL = '~';
     private ArrayList<StringBuilder> map;
     private String emptyRow;
     private int quantityOfWater;
+    private int firstRow = 1024;
     ArrayList<Drop> drops;
 
     void importData() {
@@ -40,6 +41,7 @@ public class ReservoirResearch implements Riddle {
             for (Integer x : xs) {
                 for (Integer y : ys) {
                     map.get(y).replace(x, x + 1, String.valueOf(CLAY_SYMBOL));
+                    firstRow = Math.min(firstRow, y);
                 }
             }
         }
@@ -64,17 +66,26 @@ public class ReservoirResearch implements Riddle {
     public void findSolution() {
         importData();
         drops.add(new Drop());
-        fillSandWith(FLOW_SYMBOL,drops.get(0));
+        fillSandWith(FLOW_SYMBOL, drops.get(0));
         int dropsThatFinish = 0;
-        while (drops.size()>dropsThatFinish) {
+        while (drops.size() > dropsThatFinish) {
             Drop currentDrop = drops.get(dropsThatFinish);
             char whatsBellow = SAND_SYMBOL;
-            while (currentDrop.y < map.size() & whatsBellow!=FLOW_SYMBOL) {
-                whatsBellow= whatsBellow(currentDrop.x,currentDrop.y);
+            while (currentDrop.y < (map.size() - 1) & whatsBellow != FLOW_SYMBOL) {
+                whatsBellow = whatsBellow(currentDrop.x, currentDrop.y);
                 fall(whatsBellow, currentDrop);
             }
             dropsThatFinish++;
         }
+        int water = 0;
+        for (StringBuilder line : map) {
+            for (int i = 0; i < line.length(); i++) {
+                if (line.charAt(i) == WATER_SYMBOL || line.charAt(i) == FLOW_SYMBOL) {
+                    water++;
+                }
+            }
+        }
+        System.out.println("We can gather " + (water - firstRow) + " thousand liters of water");
     }
 
     private char whatsBellow(int x, int y) {
@@ -85,50 +96,54 @@ public class ReservoirResearch implements Riddle {
         switch (whatsBellow) {
             case SAND_SYMBOL:
                 drop.fallsDawn();
-                fillSandWith(WATER_SYMBOL, drop);
+                fillSandWith(FLOW_SYMBOL, drop);
                 break;
             case FLOW_SYMBOL:
                 break;
             case WATER_SYMBOL:
             case CLAY_SYMBOL:
-                int numberOfEndings = fillRowReturnNumberOfEndings(drop);
-                if (numberOfEndings==2){
-                    drop.goesUp();
-                } else {
-                    if (numberOfEndings==0){
-                        drops.add(new Drop(maxX, drop.y));
+                int numberOfEndings = 0;
+                int freeEnd = 0;
+                int currentX = drop.x;
+                while (whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) {
+                    currentX++;
+                    if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL) {
+                        numberOfEndings++;
+                        break;
                     }
-                    drop.x = (whichEnd) ? minX : maxX; //might be right if "if" will be false
+                }
+                int maxX = currentX;
+                currentX = drop.x;
+                while (whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) {
+                    currentX--;
+                    if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL) {
+                        numberOfEndings++;
+                        freeEnd = maxX;
+                        break;
+                    } else freeEnd = currentX;
+                }
+                int minX = currentX;
+
+                char charToFill = numberOfEndings == 2 ? WATER_SYMBOL : FLOW_SYMBOL;
+                map.get(drop.y).replace(minX + 1, maxX, String.valueOf(charToFill).repeat(maxX - minX - 1));
+                switch (numberOfEndings) {
+                    case 0:
+                        Drop newDrop = new Drop(maxX, drop.y - 1);
+                        drops.add(newDrop);
+                        drop.x = freeEnd;
+                        break;
+                    case 1:
+                        drop.x = freeEnd;
+                        fillSandWith(FLOW_SYMBOL, drop);
+                        break;
+                    case 2:
+                        drop.goesUp();
+                        break;
                 }
                 break;
-
         }
     }
 
-    private int fillRowReturnNumberOfEndings(Drop drop) {
-        int result=0;
-        int currentX = drop.x;
-        while (whatsBellow(currentX,drop.y)!=(CLAY_SYMBOL | WATER_SYMBOL)){
-            currentX--;
-            if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL){
-                result++;
-                break;
-            }
-        }
-        int minX = currentX;
-        currentX = drop.x;
-        while (whatsBellow(currentX,drop.y)!=(CLAY_SYMBOL | WATER_SYMBOL)){
-            currentX++;
-            if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL){
-                result++;
-                break;
-            }
-        }
-        int maxX = currentX;
-        char charToFill = (result==2) ? WATER_SYMBOL : FLOW_SYMBOL;
-        map.get(drop.y).replace(minX,maxX+1,String.valueOf(charToFill).repeat(maxX-minX+1));
-        return result;
-    }
 
     private void fillSandWith(char symbol, Drop drop) {
         map.get(drop.y).replace(drop.x, drop.x + 1, String.valueOf(symbol));
@@ -139,21 +154,21 @@ public class ReservoirResearch implements Riddle {
         int x;
         int y;
 
-        public Drop(int x, int y) {
+        Drop(int x, int y) {
             this.x = x;
             this.y = y;
         }
 
-        public Drop() {
+        Drop() {
             this.x = 500;
             this.y = 0;
         }
 
-        public void fallsDawn() {
+        void fallsDawn() {
             this.y++;
         }
 
-        public void goesUp() {
+        void goesUp() {
             this.y--;
         }
     }
