@@ -78,18 +78,28 @@ public class ReservoirResearch implements Riddle {
             dropsThatFinish++;
         }
         int water = 0;
+        int waterThatStays = 0;
         for (StringBuilder line : map) {
             for (int i = 0; i < line.length(); i++) {
-                if (line.charAt(i) == WATER_SYMBOL || line.charAt(i) == FLOW_SYMBOL) {
+                if (line.charAt(i) == WATER_SYMBOL) {
+                    water++;
+                    waterThatStays++;
+                }
+                if (line.charAt(i) == FLOW_SYMBOL){
                     water++;
                 }
             }
         }
-        System.out.println("We can gather " + (water - firstRow) + " thousand liters of water");
+        System.out.println("We can gather " + (water - firstRow) + " thousand liters of floating water");
+        System.out.println("We can gather " + (waterThatStays) + " thousand liters of water after source is dry out");
     }
 
     private char whatsBellow(int x, int y) {
         return map.get(y + 1).charAt(x);
+    }
+
+    private char whatsAt(int x, int y) {
+        return map.get(y).charAt(x);
     }
 
     private void fall(char whatsBellow, Drop drop) {
@@ -102,46 +112,44 @@ public class ReservoirResearch implements Riddle {
                 break;
             case WATER_SYMBOL:
             case CLAY_SYMBOL:
-                int numberOfEndings = 0;
-                int freeEnd = 0;
-                int currentX = drop.x;
-                while (whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) {
-                    currentX++;
-                    if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL) {
-                        numberOfEndings++;
-                        break;
+                ArrayList<java.io.Serializable> scan = scan(drop);
+                char charToFill = (boolean) scan.get(0) & (boolean) scan.get(2) ? WATER_SYMBOL : FLOW_SYMBOL;
+                map.get(drop.y).replace((int) scan.get(1), (int) scan.get(3) + 1, String.valueOf(charToFill).repeat((int) scan.get(3) - (int) scan.get(1) + 1));
+                if ((boolean) scan.get(2) & (boolean) scan.get(0)) {
+                    drop.goesUp();
+                } else {
+                    if ((boolean) scan.get(0) & !((boolean) scan.get(2))) {
+                        drop.x = (int) scan.get(3);
+                    } else {
+                        drop.x = (int) scan.get(1);
+                        if (!((boolean) scan.get(2))) {
+                            drops.add(new Drop((int) scan.get(3), drop.y));
+                        }
                     }
-                }
-                int maxX = currentX;
-                currentX = drop.x;
-                while (whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) {
-                    currentX--;
-                    if (map.get(drop.y).charAt(currentX) == CLAY_SYMBOL) {
-                        numberOfEndings++;
-                        freeEnd = maxX;
-                        break;
-                    } else freeEnd = currentX;
-                }
-                int minX = currentX;
-
-                char charToFill = numberOfEndings == 2 ? WATER_SYMBOL : FLOW_SYMBOL;
-                map.get(drop.y).replace(minX + 1, maxX, String.valueOf(charToFill).repeat(maxX - minX - 1));
-                switch (numberOfEndings) {
-                    case 0:
-                        Drop newDrop = new Drop(maxX, drop.y - 1);
-                        drops.add(newDrop);
-                        drop.x = freeEnd;
-                        break;
-                    case 1:
-                        drop.x = freeEnd;
-                        fillSandWith(FLOW_SYMBOL, drop);
-                        break;
-                    case 2:
-                        drop.goesUp();
-                        break;
                 }
                 break;
         }
+    }
+
+    private ArrayList<java.io.Serializable> scan(Drop drop) {
+        ArrayList<java.io.Serializable> result = new ArrayList<>();
+        int currentX = drop.x;
+        while ((whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) &
+                whatsAt(currentX, drop.y) != CLAY_SYMBOL) {
+            currentX--;
+        }
+        result.add(whatsAt(currentX, drop.y) == CLAY_SYMBOL);
+        currentX += (boolean) result.get(0) ? 1 : 0;
+        result.add(currentX);
+        currentX = drop.x;
+        while ((whatsBellow(currentX, drop.y) == CLAY_SYMBOL || whatsBellow(currentX, drop.y) == WATER_SYMBOL) &
+                whatsAt(currentX, drop.y) != CLAY_SYMBOL) {
+            currentX++;
+        }
+        result.add(whatsAt(currentX, drop.y) == CLAY_SYMBOL);
+        currentX += (boolean) result.get(2) ? -1 : 0;
+        result.add(currentX);
+        return result;
     }
 
 

@@ -4,7 +4,6 @@
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day17/clay" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/clay" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,13 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add Day 5 - polymer problem">
-      <created>1560197837759</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1560197837759</updated>
     </task>
     <task id="LOCAL-00003" summary="Add Day 6 - start working with Manhattan Metric">
       <created>1560244657130</created>
@@ -423,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567507252901</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Day 17 Some misscalculate">
+      <created>1567757170027</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1567757170028</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 11, completed" />
     <MESSAGE value="Day 11, comments added" />
     <MESSAGE value="Day 12, completed, comments, clean" />
     <MESSAGE value="Day 13, Cart model only" />
@@ -479,15 +477,21 @@
     <MESSAGE value="Day 16 part 1 completede, but code isn't ready for part 2" />
     <MESSAGE value="Day 16 completed" />
     <MESSAGE value="Day 17 Drop model, map ready," />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Drop model, map ready," />
+    <MESSAGE value="Day 17 Some misscalculate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Some misscalculate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Day17/ReservoirResearch.java</url>
-          <line>87</line>
+          <line>92</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Day17/ReservoirResearch.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
