@@ -6,6 +6,7 @@ import Day14.ChocolateCharts;
 import Day15.BeverageBandits;
 import Day16.ChronalClassification;
 import Day17.ReservoirResearch;
+import Day18.SettlersOfTheNorthPole;
 import Day8.NavigationSystem;
 import Day9.MarbleMania;
 import ImportData.ImportFromFile;
@@ -80,6 +81,9 @@ public class ControlDeviceApp {
         // new ChronalClassification().findSolution();
 
         // Day 17
-        new ReservoirResearch().findSolution();
+        //new ReservoirResearch().findSolution();
+
+        // Day 18
+        new SettlersOfTheNorthPole().findSolution();
     }
 }

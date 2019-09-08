@@ -111,16 +111,22 @@ public class ReservoirResearch implements Riddle {
             case WATER_SYMBOL:
             case CLAY_SYMBOL:
                 ArrayList<java.io.Serializable> scan = scan(drop);
+                //scan zawiera ["czy lewy jest zakończony gliną?", xLewegoKońca, "czy prawy jest zak. gliną?", xPrawegoKońca]
                 char charToFill = (boolean) scan.get(0) & (boolean) scan.get(2) ? WATER_SYMBOL : FLOW_SYMBOL;
+                // jeśli są oba końce to wtedy wypełniamy wodą stojącą, w przeciwnym wypadku płynącą (gdzieś się wyleje)
                 map.get(drop.y).replace((int) scan.get(1), (int) scan.get(3) + 1, String.valueOf(charToFill).repeat((int) scan.get(3) - (int) scan.get(1) + 1));
                 if ((boolean) scan.get(2) & (boolean) scan.get(0)) {
+                    // jeśli mamy dwa końce, podnieśmy krople i proces się powtórzy
                     drop.goesUp();
                 } else {
                     if ((boolean) scan.get(0) & !((boolean) scan.get(2))) {
+                        // jeśli mamy tylko lewy koniec to przesuńmy kroplę na prawą stronę
                         drop.x = (int) scan.get(3);
                     } else {
+                        // w przeciwnym razie przesńmy kroplę na lewą stronę
                         drop.x = (int) scan.get(1);
                         if (!((boolean) scan.get(2))) {
+                            // i jeśli nie ma prawego końca, to tam stwórzmy nową kroplę
                             drops.add(new Drop((int) scan.get(3), drop.y));
                         }
                     }

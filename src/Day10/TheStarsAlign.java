@@ -17,19 +17,19 @@ public class TheStarsAlign implements Riddle {
         ArrayList<String> rowData = importFromFile.getData(FILE);
         ArrayList<Star> data = new ArrayList<>();
         for (String star : rowData) {
-            int x = Integer.valueOf(star.substring(11, 16));
+            int x = Integer.parseInt(star.substring(11, 16));
             if (star.charAt(10) == '-') {
                 x = -x;
             }
-            int y = Integer.valueOf(star.substring(19, 24));
+            int y = Integer.parseInt(star.substring(19, 24));
             if (star.charAt(18) == '-') {
                 y = -y;
             }
-            int vX = Integer.valueOf(star.substring(37, 38));
+            int vX = Integer.parseInt(star.substring(37, 38));
             if (star.charAt(36) == '-') {
                 vX = -vX;
             }
-            int vY = Integer.valueOf(star.substring(41, 42));
+            int vY = Integer.parseInt(star.substring(41, 42));
             if (star.charAt(40) == '-') {
                 vY = -vY;
             }
@@ -99,7 +99,7 @@ public class TheStarsAlign implements Riddle {
         }
     }
 
-    private class Star {
+    private static class Star {
         int xPosition, yPosition, xVelocity, yVelocity;
 
         Star(int xPosition, int yPosition, int xVelocity, int yVelocity) {

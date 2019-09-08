@@ -11,9 +11,10 @@ public class ChocolateCharts implements Riddle {
     private Recipe firstRecipe, lastRecipe;
     private Recipe firstElf;
     private Recipe secondElf;
-    private StringBuilder scoreSequence = new StringBuilder("000000");
+    private StringBuilder scoreSequence;
 
     public ChocolateCharts() {
+        scoreSequence = new StringBuilder("000000");
         lastRecipe = new Recipe();
         numberOfRecipes = 0;
         firstRecipe = new Recipe(3);

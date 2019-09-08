@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day18/initialMap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign$Star.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign$Star.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +38,7 @@
   <component name="ProjectId" id="1OkbDJYt8GgubjJ9Uc6EWKtlx6d" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -78,20 +87,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add Day 6 - start working with Manhattan Metric">
-      <created>1560244657130</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1560244657130</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Edit Day 6 - complete Manchattan Metric&#10; todo: minimize area of problem by adding min_i, min_j, max_i, max_j">
-      <created>1560332079665</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1560332079665</updated>
     </task>
     <task id="LOCAL-00005" summary="Edit Day 6 - optymize area of searching; cleaning the code of day6; add second task">
       <created>1560334412113</created>
@@ -422,7 +417,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567757170028</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Day 17 Last missspell remove, everything working just fine">
+      <created>1567930206070</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1567930206071</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Day 17 Remove insignificat warrnings">
+      <created>1567930336879</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1567930336879</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,8 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 11, comments added" />
-    <MESSAGE value="Day 12, completed, comments, clean" />
     <MESSAGE value="Day 13, Cart model only" />
     <MESSAGE value="Day 13, First Collision found" />
     <MESSAGE value="Day 13, both tasks done" />
@@ -478,23 +485,11 @@
     <MESSAGE value="Day 16 completed" />
     <MESSAGE value="Day 17 Drop model, map ready," />
     <MESSAGE value="Day 17 Some misscalculate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Some misscalculate" />
+    <MESSAGE value="Day 17 Last missspell remove, everything working just fine" />
+    <MESSAGE value="Day 17 Remove insignificat warrnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Remove insignificat warrnings" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Day17/ReservoirResearch.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Day17/ReservoirResearch.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="targetCoordinates.get(0)" />
