@@ -13,17 +13,15 @@ public class ReservoirResearch implements Riddle {
     private static final char WATER_SYMBOL = '~';
     private ArrayList<StringBuilder> map;
     private String emptyRow;
-    private int quantityOfWater;
     private int firstRow = 1024;
-    ArrayList<Drop> drops;
+    private ArrayList<Drop> drops;
 
-    void importData() {
+    private void importData() {
         ImportFromFile importFromFile = new ImportFromFile();
         ArrayList<String> coordinates = importFromFile.getData(FILE);
         coordinates.sort(String::compareTo);
         emptyRow = String.valueOf(SAND_SYMBOL).repeat(1000);
         createMap(coordinates);
-        quantityOfWater = 0;
         drops = new ArrayList<>();
     }
 
@@ -66,7 +64,7 @@ public class ReservoirResearch implements Riddle {
     public void findSolution() {
         importData();
         drops.add(new Drop());
-        fillSandWith(FLOW_SYMBOL, drops.get(0));
+        fillSandWithFlowSymbol(drops.get(0));
         int dropsThatFinish = 0;
         while (drops.size() > dropsThatFinish) {
             Drop currentDrop = drops.get(dropsThatFinish);
@@ -106,7 +104,7 @@ public class ReservoirResearch implements Riddle {
         switch (whatsBellow) {
             case SAND_SYMBOL:
                 drop.fallsDawn();
-                fillSandWith(FLOW_SYMBOL, drop);
+                fillSandWithFlowSymbol(drop);
                 break;
             case FLOW_SYMBOL:
                 break;
@@ -153,12 +151,11 @@ public class ReservoirResearch implements Riddle {
     }
 
 
-    private void fillSandWith(char symbol, Drop drop) {
-        map.get(drop.y).replace(drop.x, drop.x + 1, String.valueOf(symbol));
-        quantityOfWater++;
+    private void fillSandWithFlowSymbol(Drop drop) {
+        map.get(drop.y).replace(drop.x, drop.x + 1, String.valueOf(ReservoirResearch.FLOW_SYMBOL));
     }
 
-    private class Drop {
+    static private class Drop {
         int x;
         int y;
 
