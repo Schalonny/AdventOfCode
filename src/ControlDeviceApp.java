@@ -81,9 +81,12 @@ public class ControlDeviceApp {
         // new ChronalClassification().findSolution();
 
         // Day 17
-        //new ReservoirResearch().findSolution();
+        // new ReservoirResearch().findSolution();
 
         // Day 18
-        new SettlersOfTheNorthPole().findSolution();
+        // new SettlersOfTheNorthPole().findSolution();
+
+        // Day 19
+
     }
 }

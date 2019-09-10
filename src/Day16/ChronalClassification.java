@@ -17,12 +17,15 @@ public class ChronalClassification implements Riddle {
     private ArrayList<Opcode> opcodes;
     private ArrayList<Sample> finalInstructions;
 
+    public ChronalClassification(){
+        opcodes = setOpcodes();
+    }
+    
     private void importData() {
         samples = new ArrayList<>();
         Integer[] registerBefore;
         Integer[] instructions;
         Integer[] registerAfter;
-        setOpcodes();
         String line;
         try
                 (FileReader fileReader = new FileReader(new File(FILE));
@@ -73,24 +76,25 @@ public class ChronalClassification implements Riddle {
         return result;
     }
 
-    private void setOpcodes() {
-        opcodes = new ArrayList<>();
-        opcodes.add(new Opcode("addr", a -> a.getRegister()[a.getInstr()[1]] + a.getRegister()[a.getInstr()[2]]));
-        opcodes.add(new Opcode("addi", a -> a.getRegister()[a.getInstr()[1]] + a.getInstr()[2]));
-        opcodes.add(new Opcode("mulr", a -> a.getRegister()[a.getInstr()[1]] * a.getRegister()[a.getInstr()[2]]));
-        opcodes.add(new Opcode("muli", a -> a.getRegister()[a.getInstr()[1]] * a.getInstr()[2]));
-        opcodes.add(new Opcode("banr", a -> a.getRegister()[a.getInstr()[1]] & a.getRegister()[a.getInstr()[2]]));
-        opcodes.add(new Opcode("bani", a -> a.getRegister()[a.getInstr()[1]] & a.getInstr()[2]));
-        opcodes.add(new Opcode("borr", a -> a.getRegister()[a.getInstr()[1]] | a.getRegister()[a.getInstr()[2]]));
-        opcodes.add(new Opcode("bori", a -> a.getRegister()[a.getInstr()[1]] | a.getInstr()[2]));
-        opcodes.add(new Opcode("setr", a -> a.getRegister()[a.getInstr()[1]]));
-        opcodes.add(new Opcode("seti", a -> a.getInstr()[1]));
-        opcodes.add(new Opcode("gtir", a -> ifTrueReturnOne(a.getInstr()[1] > a.getRegister()[a.getInstr()[2]])));
-        opcodes.add(new Opcode("gtri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getInstr()[2])));
-        opcodes.add(new Opcode("gtrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getRegister()[a.getInstr()[2]])));
-        opcodes.add(new Opcode("eqir", a -> ifTrueReturnOne(a.getInstr()[1].equals(a.getRegister()[a.getInstr()[2]]))));
-        opcodes.add(new Opcode("eqri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getInstr()[2]))));
-        opcodes.add(new Opcode("eqrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getRegister()[a.getInstr()[2]]))));
+    public ArrayList<Opcode> setOpcodes() {
+        ArrayList<Opcode> result = new ArrayList<>();
+        result.add(new Opcode("addr", a -> a.getRegister()[a.getInstr()[1]] + a.getRegister()[a.getInstr()[2]]));
+        result.add(new Opcode("addi", a -> a.getRegister()[a.getInstr()[1]] + a.getInstr()[2]));
+        result.add(new Opcode("mulr", a -> a.getRegister()[a.getInstr()[1]] * a.getRegister()[a.getInstr()[2]]));
+        result.add(new Opcode("muli", a -> a.getRegister()[a.getInstr()[1]] * a.getInstr()[2]));
+        result.add(new Opcode("banr", a -> a.getRegister()[a.getInstr()[1]] & a.getRegister()[a.getInstr()[2]]));
+        result.add(new Opcode("bani", a -> a.getRegister()[a.getInstr()[1]] & a.getInstr()[2]));
+        result.add(new Opcode("borr", a -> a.getRegister()[a.getInstr()[1]] | a.getRegister()[a.getInstr()[2]]));
+        result.add(new Opcode("bori", a -> a.getRegister()[a.getInstr()[1]] | a.getInstr()[2]));
+        result.add(new Opcode("setr", a -> a.getRegister()[a.getInstr()[1]]));
+        result.add(new Opcode("seti", a -> a.getInstr()[1]));
+        result.add(new Opcode("gtir", a -> ifTrueReturnOne(a.getInstr()[1] > a.getRegister()[a.getInstr()[2]])));
+        result.add(new Opcode("gtri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getInstr()[2])));
+        result.add(new Opcode("gtrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getRegister()[a.getInstr()[2]])));
+        result.add(new Opcode("eqir", a -> ifTrueReturnOne(a.getInstr()[1].equals(a.getRegister()[a.getInstr()[2]]))));
+        result.add(new Opcode("eqri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getInstr()[2]))));
+        result.add(new Opcode("eqrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getRegister()[a.getInstr()[2]]))));
+        return result;
     }
 
     private int ifTrueReturnOne(boolean statement) {

@@ -2,7 +2,7 @@ package Day16;
 
 import java.util.function.Function;
 
-class Opcode {
+public class Opcode {
     private String name;
     private Function<Sample,Integer> function;
     private int number;

@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day18/initialMap" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18/initialMap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day16/Opcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/Opcode.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,13 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Cleaning code of code 6, and start with ControlDevice">
-      <created>1560335761206</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1560335761206</updated>
     </task>
     <task id="LOCAL-00007" summary="Day7 SleightInstruction; skeleton">
       <created>1560416587280</created>
@@ -424,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567954404361</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Day 18 completed">
+      <created>1568111104436</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1568111104437</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -455,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 13, First Collision found" />
     <MESSAGE value="Day 13, both tasks done" />
     <MESSAGE value="Day 14, first task skelleton, should work" />
     <MESSAGE value="Day 14, first task skelleton, working" />
@@ -480,7 +481,8 @@
     <MESSAGE value="Day 17 Last missspell remove, everything working just fine" />
     <MESSAGE value="Day 17 Remove insignificat warrnings" />
     <MESSAGE value="Day 18 nearly ready, some problem with neighbours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 18 nearly ready, some problem with neighbours" />
+    <MESSAGE value="Day 18 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 18 completed" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
