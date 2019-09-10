@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day18/initialMap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign$Star.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign$Star.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day10/TheStarsAlign.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day10/TheStarsAlign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day14/ChocolateCharts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day17/ReservoirResearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18/SettlersOfTheNorthPole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day18/initialMap" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18/initialMap" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,13 +80,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Edit Day 6 - optymize area of searching; cleaning the code of day6; add second task">
-      <created>1560334412113</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1560334412113</updated>
     </task>
     <task id="LOCAL-00006" summary="Cleaning code of code 6, and start with ControlDevice">
       <created>1560335761206</created>
@@ -431,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567930336879</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Day 18 nearly ready, some problem with neighbours">
+      <created>1567954404361</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1567954404361</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +455,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 13, Cart model only" />
     <MESSAGE value="Day 13, First Collision found" />
     <MESSAGE value="Day 13, both tasks done" />
     <MESSAGE value="Day 14, first task skelleton, should work" />
@@ -487,7 +479,8 @@
     <MESSAGE value="Day 17 Some misscalculate" />
     <MESSAGE value="Day 17 Last missspell remove, everything working just fine" />
     <MESSAGE value="Day 17 Remove insignificat warrnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 17 Remove insignificat warrnings" />
+    <MESSAGE value="Day 18 nearly ready, some problem with neighbours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 18 nearly ready, some problem with neighbours" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
