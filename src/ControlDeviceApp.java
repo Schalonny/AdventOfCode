@@ -7,9 +7,6 @@ import Day15.BeverageBandits;
 import Day16.ChronalClassification;
 import Day17.ReservoirResearch;
 import Day18.SettlersOfTheNorthPole;
-import Day8.NavigationSystem;
-import Day9.MarbleMania;
-import ImportData.ImportFromFile;
 
 public class ControlDeviceApp {
     private static final String INTRO = "./src/intro";
@@ -17,12 +14,13 @@ public class ControlDeviceApp {
     public static void main(String[] args) {
         /*ImportFromFile importFromFile = new ImportFromFile();
         importFromFile.getData(INTRO).forEach(System.out::println);
+
         // Day 1
-        FrequencyBody frequencyBody = new FrequencyBody();
-        frequencyBody.findSolution();
+        new FrequencyBody().findSolution();
+
         // Day 2
-        ScannerBody scannerBody = new ScannerBody();
-        scannerBody.findSolution();
+        new ScannerBody().findSolution();
+
         // Day 3
         System.out.println();
         FabricClaims fabricClaims = new FabricClaims();
@@ -38,54 +36,46 @@ public class ControlDeviceApp {
         PolymerReductor polymerReductor = new PolymerReductor();
         System.out.println("Length of the Polymer after reductions is: " + polymerReductor.getPolymerLength(polymerReductor.getPolymer()));
         System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
+
         // Day 6
-        CoordinatesProblem coordinatesProblem = new CoordinatesProblem();
-        coordinatesProblem.findSolution();
-        //TODO add menu and change code to looks like from day 6.
+        new CoordinatesProblem().findSolution();
 
         // Day 7
-        SleighInstructions sleighInstructions = new SleighInstructions();
-        sleighInstructions.findSolution();
+        new SleighInstructions().findSolution();
 
-
-
-       // Day 8
-        NavigationSystem navigationSystem = new NavigationSystem();
-        navigationSystem.findSolution();
-
+        // Day 8
+        new NavigationSystem().findSolution();
 
         // Day 9
-        MarbleMania marbleMania = new MarbleMania();
-        marbleMania.findSolution();
-         */
+        new MarbleMania().findSolution();
 
         // Day 10
-        // new TheStarsAlign().findSolution();
+         new TheStarsAlign().findSolution();
 
         // Day 11
-        // new ChronalCharge().findSolution();
+        new ChronalCharge().findSolution();
 
         // Day 12
-        // new SubterraneanSustainability().findSolution();
+        new SubterraneanSustainability().findSolution();
 
         // Day 13
-        // new MineCartMadness().findSolution();
+        new MineCartMadness().findSolution();
 
         // Day 14
-        // new ChocolateCharts().findSolution();
+        new ChocolateCharts().findSolution();
 
         // Day 15
-        //new BeverageBandits().findSolution();
+        new BeverageBandits().findSolution();
 
         // Day 16
-         new ChronalClassification().findSolution();
+        new ChronalClassification().findSolution();
 
         // Day 17
-        // new ReservoirResearch().findSolution();
+        new ReservoirResearch().findSolution();
 
         // Day 18
-        // new SettlersOfTheNorthPole().findSolution();
-
+        new SettlersOfTheNorthPole().findSolution();
+*/
         // Day 19
 
     }

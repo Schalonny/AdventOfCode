@@ -20,6 +20,10 @@ public class Opcode {
         this.number = 16;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Opcode{" + name +
