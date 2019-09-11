@@ -15,7 +15,7 @@ public class ChronalClassification implements Riddle {
     private static final String FILE_TO_EXECUTE = "./src/Day16/testProgram";
     private ArrayList<Sample> samples;
     private ArrayList<Opcode> opcodes;
-    private ArrayList<Sample> finalInstructions;
+    private ArrayList<Integer[]> testProgram;
 
     public ChronalClassification(){
         opcodes = setOpcodes();
@@ -23,35 +23,29 @@ public class ChronalClassification implements Riddle {
     
     private void importData() {
         samples = new ArrayList<>();
-        Integer[] registerBefore;
-        Integer[] instructions;
-        Integer[] registerAfter;
         String line;
         try
                 (FileReader fileReader = new FileReader(new File(FILE));
                  BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
             while (((line = bufferedReader.readLine()) != null)) {
-                registerBefore = fillRegister(line);
-                line = bufferedReader.readLine();
-                instructions = fillInstructions(line);
-                line = bufferedReader.readLine();
-                registerAfter = fillRegister(line);
-                samples.add(new Sample(registerBefore, instructions, registerAfter));
+                samples.add(new Sample(
+                        setRegister(line),
+                        setInstructions(bufferedReader.readLine()),
+                        setRegister(bufferedReader.readLine())));
                 bufferedReader.readLine();
             }
         } catch (
                 IOException e) {
             e.getMessage();
         }
-        finalInstructions = new ArrayList<>();
+        testProgram = new ArrayList<>();
         try
                 (FileReader fileReader = new FileReader(new File(FILE_TO_EXECUTE));
                  BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
             while (((line = bufferedReader.readLine()) != null)) {
-                instructions = fillInstructions(line);
-                finalInstructions.add(new Sample(instructions));
+                testProgram.add(setInstructions(line));
             }
         } catch (
                 IOException e) {
@@ -59,7 +53,7 @@ public class ChronalClassification implements Riddle {
         }
     }
 
-    private Integer[] fillInstructions(String line) {
+    private Integer[] setInstructions(String line) {
         Integer[] result = new Integer[4];
         result[0] = Integer.valueOf(line.substring(0, line.length() - 6));
         result[1] = Integer.valueOf(line.substring(line.length() - 5, line.length() - 4));
@@ -68,7 +62,7 @@ public class ChronalClassification implements Riddle {
         return result;
     }
 
-    private Integer[] fillRegister(String line) {
+    private Integer[] setRegister(String line) {
         Integer[] result = new Integer[4];
         for (int i = 0; i < 4; i++) {
             result[i] = (Integer.valueOf(line.substring(9 + 3 * i, 10 + 3 * i)));
@@ -78,26 +72,28 @@ public class ChronalClassification implements Riddle {
 
     public ArrayList<Opcode> setOpcodes() {
         ArrayList<Opcode> result = new ArrayList<>();
-        result.add(new Opcode("addr", a -> a.getRegister()[a.getInstr()[1]] + a.getRegister()[a.getInstr()[2]]));
-        result.add(new Opcode("addi", a -> a.getRegister()[a.getInstr()[1]] + a.getInstr()[2]));
-        result.add(new Opcode("mulr", a -> a.getRegister()[a.getInstr()[1]] * a.getRegister()[a.getInstr()[2]]));
-        result.add(new Opcode("muli", a -> a.getRegister()[a.getInstr()[1]] * a.getInstr()[2]));
-        result.add(new Opcode("banr", a -> a.getRegister()[a.getInstr()[1]] & a.getRegister()[a.getInstr()[2]]));
-        result.add(new Opcode("bani", a -> a.getRegister()[a.getInstr()[1]] & a.getInstr()[2]));
-        result.add(new Opcode("borr", a -> a.getRegister()[a.getInstr()[1]] | a.getRegister()[a.getInstr()[2]]));
-        result.add(new Opcode("bori", a -> a.getRegister()[a.getInstr()[1]] | a.getInstr()[2]));
-        result.add(new Opcode("setr", a -> a.getRegister()[a.getInstr()[1]]));
-        result.add(new Opcode("seti", a -> a.getInstr()[1]));
-        result.add(new Opcode("gtir", a -> ifTrueReturnOne(a.getInstr()[1] > a.getRegister()[a.getInstr()[2]])));
-        result.add(new Opcode("gtri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getInstr()[2])));
-        result.add(new Opcode("gtrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]] > a.getRegister()[a.getInstr()[2]])));
-        result.add(new Opcode("eqir", a -> ifTrueReturnOne(a.getInstr()[1].equals(a.getRegister()[a.getInstr()[2]]))));
-        result.add(new Opcode("eqri", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getInstr()[2]))));
-        result.add(new Opcode("eqrr", a -> ifTrueReturnOne(a.getRegister()[a.getInstr()[1]].equals(a.getRegister()[a.getInstr()[2]]))));
+        //a.get(0) - zawiera register wejściowy [0 0 0 0]
+        //a.get(1) - zawiera operator i wskazuje operandy [name A B C]
+        result.add(new Opcode("addr", a -> a.get(0)[a.get(1)[1]] + a.get(0)[a.get(1)[2]]));
+        result.add(new Opcode("addi", a -> a.get(0)[a.get(1)[1]] + a.get(1)[2]));
+        result.add(new Opcode("mulr", a -> a.get(0)[a.get(1)[1]] * a.get(0)[a.get(1)[2]]));
+        result.add(new Opcode("muli", a -> a.get(0)[a.get(1)[1]] * a.get(1)[2]));
+        result.add(new Opcode("banr", a -> a.get(0)[a.get(1)[1]] & a.get(0)[a.get(1)[2]]));
+        result.add(new Opcode("bani", a -> a.get(0)[a.get(1)[1]] & a.get(1)[2]));
+        result.add(new Opcode("borr", a -> a.get(0)[a.get(1)[1]] | a.get(0)[a.get(1)[2]]));
+        result.add(new Opcode("bori", a -> a.get(0)[a.get(1)[1]] | a.get(1)[2]));
+        result.add(new Opcode("setr", a -> a.get(0)[a.get(1)[1]]));
+        result.add(new Opcode("seti", a -> a.get(1)[1]));
+        result.add(new Opcode("gtir", a -> boolToInt(a.get(1)[1] > a.get(0)[a.get(1)[2]])));
+        result.add(new Opcode("gtri", a -> boolToInt(a.get(0)[a.get(1)[1]] > a.get(1)[2])));
+        result.add(new Opcode("gtrr", a -> boolToInt(a.get(0)[a.get(1)[1]] > a.get(0)[a.get(1)[2]])));
+        result.add(new Opcode("eqir", a -> boolToInt(a.get(1)[1].equals(a.get(0)[a.get(1)[2]]))));
+        result.add(new Opcode("eqri", a -> boolToInt(a.get(0)[a.get(1)[1]].equals(a.get(1)[2]))));
+        result.add(new Opcode("eqrr", a -> boolToInt(a.get(0)[a.get(1)[1]].equals(a.get(0)[a.get(1)[2]]))));
         return result;
     }
 
-    private int ifTrueReturnOne(boolean statement) {
+    private int boolToInt(boolean statement) {
         return statement ? 1 : 0;
     }
 
@@ -107,13 +103,11 @@ public class ChronalClassification implements Riddle {
         System.out.println(howManySamples() + " samples behave like 3 or more opcodes.");
         assignNumbersToOpcodes();
         opcodes.sort(Comparator.comparingInt(Opcode::getNumber));
-        Integer[] zeros={0,0,0,0};
-        Sample workingSample = new Sample(zeros);
-        for (Sample data : finalInstructions) {
-            workingSample.setInstr(data.getInstr());
-            workingSample.setRegister(opcodes.get(data.getIdOfOpcode()).executeAndProduceNewRegister(workingSample));
+        Integer[] workingRegister = new Integer[]{0,0,0,0};
+        for (Integer[] instruction : testProgram) {
+            workingRegister = opcodes.get(instruction[0]).execute(workingRegister, instruction);
         }
-        System.out.println("Last register will start from: " + workingSample.getRegister()[0]);
+        System.out.println("Last register will start from: " + workingRegister[0]);
     }
 
     private void assignNumbersToOpcodes() {

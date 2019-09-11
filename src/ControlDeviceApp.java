@@ -78,7 +78,7 @@ public class ControlDeviceApp {
         //new BeverageBandits().findSolution();
 
         // Day 16
-        // new ChronalClassification().findSolution();
+         new ChronalClassification().findSolution();
 
         // Day 17
         // new ReservoirResearch().findSolution();
