@@ -6,7 +6,7 @@ import Intarface.Riddle;
 import java.util.*;
 
 public class SleighInstructions implements Riddle {
-    private static final String FILE = "./src/Day7/instructions";
+    private static final String FILE = "./src/Day07/instructions";
     private static final int NUMBER_OF_HELPERS = 4;
 
     private StringBuilder finalOrder = new StringBuilder();

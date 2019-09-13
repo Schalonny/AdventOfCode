@@ -47,11 +47,11 @@ public class Opcode {
         return number;
     }
 
-    Integer[] execute(Integer[] input, Integer[] instruction) {
+    public Integer[] execute(Integer[] input, Integer[] instruction) {
         ArrayList<Integer[]> functionData = new ArrayList<>();
         functionData.add(input);
         functionData.add(instruction);
-        input[instruction[3]] = function.apply(functionData);
+        input[(int) instruction[3]] = function.apply(functionData);
         return input;
     }
 }

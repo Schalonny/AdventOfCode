@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FabricClaims implements Riddle {
-    private static final String INPUT = "./src/Day3/fabricClaims";
+    private static final String INPUT = "./src/Day03/fabricClaims";
     private static final int FABRIC_SIZE = 2000;
 
     @Override

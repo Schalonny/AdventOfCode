@@ -4,7 +4,7 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 public class MarbleMania implements Riddle {
-    private static final String FILE = "./src/Day9/gameStatus";
+    private static final String FILE = "./src/Day09/gameStatus";
     private static final int SCORE_MARBLE = 23;
     private int numberOfMarbles;
     private int numberOfPlayers = setInitialValues();

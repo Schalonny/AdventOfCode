@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 
 public class FrequencyBody implements Riddle {
-    private static final String FILE = "./src/Day1/frequencies";
+    private static final String FILE = "./src/Day01/frequencies";
     private ArrayList<String> frequencies = new ArrayList<>();
 
     public void findSolution(){

@@ -6,7 +6,7 @@ import Intarface.Riddle;
 import java.util.ArrayList;
 
 public class NavigationSystem implements Riddle {
-    private static final String FILE = "./src/Day8/listOfNumbers";
+    private static final String FILE = "./src/Day08/listOfNumbers";
     private ArrayList<Integer> inputData = new ArrayList<>();
     private int metadataEntries = 0;
 

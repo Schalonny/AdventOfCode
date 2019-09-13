@@ -7,6 +7,7 @@ import Day15.BeverageBandits;
 import Day16.ChronalClassification;
 import Day17.ReservoirResearch;
 import Day18.SettlersOfTheNorthPole;
+import Day19.GoWithTheFlow;
 
 public class ControlDeviceApp {
     private static final String INTRO = "./src/intro";
@@ -77,6 +78,7 @@ public class ControlDeviceApp {
         new SettlersOfTheNorthPole().findSolution();
 */
         // Day 19
+        new GoWithTheFlow().findSolution();
 
     }
 }

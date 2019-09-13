@@ -6,7 +6,7 @@ import Intarface.Riddle;
 import java.util.*;
 
 public class GuardsBehavior implements Riddle {
-    private static final String INPUT = "./src/Day4/wallData";
+    private static final String INPUT = "./src/Day04/wallData";
 
     @Override
     public void findSolution() {

@@ -54,11 +54,11 @@ public class ChronalClassification implements Riddle {
     }
 
     private Integer[] setInstructions(String line) {
+        String [] data = line.split(" ");
         Integer[] result = new Integer[4];
-        result[0] = Integer.valueOf(line.substring(0, line.length() - 6));
-        result[1] = Integer.valueOf(line.substring(line.length() - 5, line.length() - 4));
-        result[2] = Integer.valueOf(line.substring(line.length() - 3, line.length() - 2));
-        result[3] = Integer.valueOf(line.substring(line.length() - 1));
+        for (int i=0; i<data.length; i++) {
+            result[i] = Integer.valueOf(data[i]);
+        }
         return result;
     }
 

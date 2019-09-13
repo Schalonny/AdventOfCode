@@ -4,7 +4,7 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 public class PolymerReductor implements Riddle {
-    private static final String FILE = "./src/Day5/polymer";
+    private static final String FILE = "./src/Day05/polymer";
 
     private StringBuilder getPolymer() {
         ImportFromFile importFromFile = new ImportFromFile();

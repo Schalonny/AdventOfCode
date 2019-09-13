@@ -6,7 +6,7 @@ import Intarface.Riddle;
 import java.util.ArrayList;
 
 public class ScannerBody implements Riddle {
-    private static final String FILE = "./src/Day2/packagesIDs";
+    private static final String FILE = "./src/Day02/packagesIDs";
     private ArrayList<String> ids = new ArrayList<>();
 
     public void findSolution() {

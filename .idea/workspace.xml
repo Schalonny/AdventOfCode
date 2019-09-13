@@ -2,54 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Day19/instructions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day1/FrequencyBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day1/frequencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day2/ScannerBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day2/packagesIDs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day3/FabricClaims.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day3/fabricClaims" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day4/Guard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day4/GuardsBehavior.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day4/wallData" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day5/PolymerReductor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day5/polymer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/CoordinatesProblem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/Place.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day6/locations" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/SleighInstructions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/Worker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day7/instructions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day8/NavigationSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day8/listOfNumbers" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/MarbleMania$Marble.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/MarbleMania.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day9/gameStatus" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day1/FrequencyBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day01/FrequencyBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day1/frequencies" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day01/frequencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day01/FrequencyBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day01/FrequencyBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day02/ScannerBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day02/ScannerBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day03/FabricClaims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day03/FabricClaims.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day04/GuardsBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/GuardsBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day05/PolymerReductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day05/PolymerReductor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day06/CoordinatesProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day06/CoordinatesProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day07/SleighInstructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day07/SleighInstructions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day08/NavigationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day08/NavigationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day09/MarbleMania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day09/MarbleMania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/ChronalClassification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day16/Opcode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day16/Opcode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2/ScannerBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day02/ScannerBody.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day2/packagesIDs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day02/packagesIDs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day3/FabricClaims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day03/FabricClaims.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day3/fabricClaims" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day03/fabricClaims" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day4/Guard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/Guard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day4/GuardsBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/GuardsBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day4/wallData" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/wallData" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day5/PolymerReductor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day05/PolymerReductor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day5/polymer" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day05/polymer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day6/CoordinatesProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day06/CoordinatesProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day6/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day06/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day6/locations" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day06/locations" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day7/SleighInstructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day07/SleighInstructions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day7/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day07/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day7/instructions" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day07/instructions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day8/NavigationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day08/NavigationSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day8/listOfNumbers" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day08/listOfNumbers" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day9/MarbleMania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day09/MarbleMania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day9/gameStatus" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day09/gameStatus" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,13 +93,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Day7 SleightInstruction - second task done, and clean code">
-      <created>1560432946685</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1560432946685</updated>
     </task>
     <task id="LOCAL-00010" summary="Cleaning code of Day1, orginize it and simplyfy">
       <created>1560503732353</created>
@@ -469,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568216479235</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Change names of packages, start working on menu; some ideas in day 19.">
+      <created>1568221467217</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1568221467217</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -500,7 +468,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 14, first task skelleton, working" />
     <MESSAGE value="Day 14, first task done, second uncomplite" />
     <MESSAGE value="Day 14, Both task done (without smooth answer)" />
     <MESSAGE value="Day 15" />
@@ -525,7 +492,8 @@
     <MESSAGE value="Day 18 completed" />
     <MESSAGE value="Day 19: update day 16th to new functionality" />
     <MESSAGE value="Day 16: change logic to fit day19 riddle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 16: change logic to fit day19 riddle" />
+    <MESSAGE value="Change names of packages, start working on menu; some ideas in day 19." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change names of packages, start working on menu; some ideas in day 19." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
