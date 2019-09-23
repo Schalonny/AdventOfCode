@@ -13,10 +13,12 @@ public class FabricClaims implements Riddle {
 
     @Override
     public void findSolution() {
+        System.out.println("That many square inches has multiple claims: " + multipleClaims());
+        System.out.println("Only claim that isn't overlap is claim of Elf no: " + untouchedClaim());
 
     }
 
-    public int multipleClaims() {
+    private int multipleClaims() {
         int squareInchesWithMultipleClaims = 0;
         int[][] fabric = claimsRead();
         for (int[] columnClaims : fabric) {
@@ -27,7 +29,7 @@ public class FabricClaims implements Riddle {
         return squareInchesWithMultipleClaims;
     }
 
-    public int untouchedClaim() {
+    private int untouchedClaim() {
         int[][] fabric = claimsRead();
         String line;
         boolean isThisClaim;
@@ -46,6 +48,7 @@ public class FabricClaims implements Riddle {
                     for (int j = 0; j < yLength; j++) {
                         if (fabric[i + startingXInch][j + startingYInch] != 1) {
                             isThisClaim = false;
+                            break;
                         }
                     }
                 }

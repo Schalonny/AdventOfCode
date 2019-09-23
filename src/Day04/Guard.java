@@ -15,25 +15,28 @@ public class Guard implements Comparable<Guard> {
         this.totalAsleep = 0;
     }
 
-    public void increaseShiftsByOne() {
+    void increaseShiftsByOne() {
         this.shifts++;
     }
- public int[] getSleep(){
+
+    int[] getSleep() {
         return this.sleep;
- }
-    public int getNumber(){
+    }
+
+    int getNumber() {
         return this.number;
     }
-    public int getTotalAsleep() {
+
+    int getTotalAsleep() {
         return this.totalAsleep;
     }
 
-    public void putToSleep(int minute) {
+    void putToSleep(int minute) {
         this.sleep[minute]++;
         this.totalAsleep++;
     }
 
-    public void awake(int minute) {
+    void awake(int minute) {
         this.sleep[minute]--;
         this.totalAsleep--;
     }

@@ -11,6 +11,9 @@ public class GuardsBehavior implements Riddle {
     @Override
     public void findSolution() {
 
+        System.out.println("Control sum for which guard sleep most and the best minute to slip in is: " + findControlSum());
+        System.out.println("Control sum for which guard is most frequently asleep on the same minute: " + findSleepMinute());
+
     }
 
     private ArrayList<String> getSortedData() {
@@ -35,7 +38,7 @@ public class GuardsBehavior implements Riddle {
     }
     //szukamy minuty, która najczęściej jest przesypiana przez jednego elfa
     //zwracamy sumę kontrolną czyli iloczyn ID oraz wybranej minuty
-    public String findSleepMinute (){
+    private String findSleepMinute (){
         int minute = -1;
         int mostSleep = -1;
         int sleeperID = -1;
@@ -54,7 +57,7 @@ public class GuardsBehavior implements Riddle {
 
 
     // sleeper ID x minute his sleept most
-    public String findControlSum() {
+    private String findControlSum() {
         Guard sleeper = findSleeper();
         int theBestMinute = 0;
         for (int i = 0; i < sleeper.getSleep().length; i++) {

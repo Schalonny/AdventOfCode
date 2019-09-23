@@ -15,7 +15,8 @@ public class PolymerReductor implements Riddle {
 
     @Override
     public void findSolution() {
-
+        System.out.println("Length of the Polymer after reductions is: " + getPolymerLength(getPolymer()));
+        System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + removeProblematicUnit());
     }
 
     private StringBuilder reducePolymer(StringBuilder polymer) {
@@ -41,7 +42,7 @@ public class PolymerReductor implements Riddle {
         return reducePolymer(polymer).length();
     }
 
-    public int removeProblematicUnit() {
+    private int removeProblematicUnit() {
         // ściągnij oryginalny, już wykrojony polimer
         StringBuilder polymer = reducePolymer(getPolymer());
         // ustaw domyślnie, że to on jest najkrótszy

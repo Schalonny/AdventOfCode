@@ -23,20 +23,13 @@ public class ControlDeviceApp {
         new ScannerBody().findSolution();
 
         // Day 3
-        System.out.println();
-        FabricClaims fabricClaims = new FabricClaims();
-        System.out.println("That many square inches has multiple claims: " + fabricClaims.multipleClaims());
-        System.out.println("Only claim that isn't overlap is claim of Elf no: " + fabricClaims.untouchedClaim());
+        new FabricClaims().findSolution();
+
         // Day 4
-        System.out.println();
-        GuardsBehavior guards = new GuardsBehavior();
-        System.out.println("Control sum for which guard sleep most and the best minute to slip in is: " + guards.findControlSum());
-        System.out.println("Control sum for which guard is most frequently asleep on the same minute: " + guards.findSleepMinute());
+        new GuardsBehavior().findSolution();
+
         // Day 5
-        System.out.println();
-        PolymerReductor polymerReductor = new PolymerReductor();
-        System.out.println("Length of the Polymer after reductions is: " + polymerReductor.getPolymerLength(polymerReductor.getPolymer()));
-        System.out.println("Shortest Polymer after removing one letter and redact will be at length: " + polymerReductor.removeProblematicUnit());
+        new PolymerReductor().findSolution();
 
         // Day 6
         new CoordinatesProblem().findSolution();
