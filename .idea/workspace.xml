@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00012" summary="repair two typos">
-      <created>1560505922598</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1560505922598</updated>
     </task>
     <task id="LOCAL-00013" summary="remove unnecessary variable">
       <created>1560506174539</created>
@@ -425,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569225107170</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Day 19, second task ready, waiting for optimization to produce some result">
+      <created>1569313710408</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1569313710409</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -456,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 15" />
     <MESSAGE value="Day 15, beginning" />
     <MESSAGE value="Day 15.2" />
     <MESSAGE value="Day 15.3 skeletton of solution" />
@@ -481,7 +478,8 @@
     <MESSAGE value="Change names of packages, start working on menu; some ideas in day 19." />
     <MESSAGE value="Day 19, first task, non optimal" />
     <MESSAGE value="Menu minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu minor changes" />
+    <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 19, second task ready, waiting for optimization to produce some result" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -6,6 +6,7 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class GoWithTheFlow implements Riddle {
@@ -44,6 +45,7 @@ public class GoWithTheFlow implements Riddle {
             register = opcodes.get(instruction[0]).execute(register, instruction);
             register[positionToModify]++;
             marker = register[positionToModify];
+            System.out.println(Arrays.toString(register));
         }
         System.out.println(register[0]);
     }
