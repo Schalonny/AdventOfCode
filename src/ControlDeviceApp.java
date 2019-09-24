@@ -8,13 +8,18 @@ import Day16.ChronalClassification;
 import Day17.ReservoirResearch;
 import Day18.SettlersOfTheNorthPole;
 import Day19.GoWithTheFlow;
+import ImportData.ImportFromFile;
 
 public class ControlDeviceApp {
     private static final String INTRO = "./src/intro";
 
     public static void main(String[] args) {
-        /*ImportFromFile importFromFile = new ImportFromFile();
+        /*
+
+        ImportFromFile importFromFile = new ImportFromFile();
         importFromFile.getData(INTRO).forEach(System.out::println);
+        System.out.println();
+
 
         // Day 1
         new FrequencyBody().findSolution();

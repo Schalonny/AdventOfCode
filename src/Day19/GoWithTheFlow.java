@@ -6,7 +6,6 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class GoWithTheFlow implements Riddle {
@@ -15,19 +14,19 @@ public class GoWithTheFlow implements Riddle {
     private ArrayList<Opcode> opcodes;
     private Integer[] register;
 
-    public GoWithTheFlow(){
+    public GoWithTheFlow() {
         importData();
     }
 
-    void importData(){
+    private void importData() {
         opcodes = new ChronalClassification().setOpcodes();
-        register = new Integer[] {1,0,0,0,0,0};
+        register = new Integer[]{1, 0, 0, 0, 0, 0};
         ArrayList<String> data = new ImportFromFile().getData(FILE);
         instructions = new ArrayList<>();
         for (String instruction : data) {
             Integer[] instrInt = new Integer[5];
             String[] instrStr = instruction.split(" ");
-            instrInt[0] = data.indexOf(instruction)==0 ? opcodes.indexOf(findOpcodeByName(instrStr[0])) : 0;
+            instrInt[0] = data.indexOf(instruction) != 0 ? opcodes.indexOf(findOpcodeByName(instrStr[0])) : 0;
             for (int i = 1; i < instrStr.length; i++) {
                 instrInt[i] = Integer.parseInt(instrStr[i]);
             }
@@ -40,16 +39,16 @@ public class GoWithTheFlow implements Riddle {
         int positionToModify = instructions.get(0)[1];
         instructions.remove(0);
         int marker = 0;
-        while (marker<instructions.size()){
-            register = opcodes.get(instructions.get(marker)[0]).execute(register, instructions.get(marker));
+        while (marker < instructions.size()) {
+            Integer[] instruction = instructions.get(marker);
+            register = opcodes.get(instruction[0]).execute(register, instruction);
             register[positionToModify]++;
             marker = register[positionToModify];
-            System.out.println(Arrays.toString(register));
         }
         System.out.println(register[0]);
     }
 
-    private Opcode findOpcodeByName(String name){
+    private Opcode findOpcodeByName(String name) {
         return opcodes.stream().filter(op -> op.getName().equals(name)).collect(Collectors.toList()).get(0);
     }
 }

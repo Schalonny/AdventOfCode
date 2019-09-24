@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/ControlDeviceApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ControlDeviceApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControlDeviceApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day03/FabricClaims.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day03/FabricClaims.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day04/Guard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/Guard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day04/GuardsBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day04/GuardsBehavior.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,13 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Cleaning code of Day2, organize it and (nearly) simplyfy">
-      <created>1560505574689</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1560505574689</updated>
     </task>
     <task id="LOCAL-00012" summary="repair two typos">
       <created>1560505922598</created>
@@ -427,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568393386004</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Menu minor changes">
+      <created>1569225107169</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1569225107170</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -458,7 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 14, Both task done (without smooth answer)" />
     <MESSAGE value="Day 15" />
     <MESSAGE value="Day 15, beginning" />
     <MESSAGE value="Day 15.2" />
@@ -483,18 +480,10 @@
     <MESSAGE value="Day 16: change logic to fit day19 riddle" />
     <MESSAGE value="Change names of packages, start working on menu; some ideas in day 19." />
     <MESSAGE value="Day 19, first task, non optimal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 19, first task, non optimal" />
+    <MESSAGE value="Menu minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu minor changes" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Day19/GoWithTheFlow.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="targetCoordinates.get(0)" />
