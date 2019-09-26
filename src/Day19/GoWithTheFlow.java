@@ -41,11 +41,10 @@ public class GoWithTheFlow implements Riddle {
         instructions.remove(0);
         int marker = 0;
         while (marker < instructions.size()) {
-            Integer[] instruction = instructions.get(marker);
-            register = opcodes.get(instruction[0]).execute(register, instruction);
+            register = opcodes.get(instructions.get(marker)[0]).execute(register, instructions.get(marker));
             register[positionToModify]++;
             marker = register[positionToModify];
-            System.out.println(Arrays.toString(register));
+//            System.out.println(Arrays.toString(register));
         }
         System.out.println(register[0]);
     }

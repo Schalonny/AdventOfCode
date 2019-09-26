@@ -1,6 +1,8 @@
 package Day16;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 
 public class Opcode {
@@ -48,10 +50,9 @@ public class Opcode {
     }
 
     public Integer[] execute(Integer[] input, Integer[] instruction) {
-        ArrayList<Integer[]> functionData = new ArrayList<>();
-        functionData.add(input);
-        functionData.add(instruction);
-        input[(int) instruction[3]] = function.apply(functionData);
+        ArrayList<Integer[]> functionData = new ArrayList<>(
+                Arrays.asList(input, instruction));
+        input[instruction[3]] = function.apply(functionData);
         return input;
     }
 }
