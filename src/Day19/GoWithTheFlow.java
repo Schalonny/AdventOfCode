@@ -21,7 +21,7 @@ public class GoWithTheFlow implements Riddle {
 
     private void importData() {
         opcodes = new ChronalClassification().setOpcodes();
-        register = new Integer[]{1, 0, 0, 0, 0, 0};
+        register = new Integer[]{0, 0, 0, 0, 0, 0};
         ArrayList<String> data = new ImportFromFile().getData(FILE);
         instructions = new ArrayList<>();
         for (String instruction : data) {
@@ -44,9 +44,12 @@ public class GoWithTheFlow implements Riddle {
             register = opcodes.get(instructions.get(marker)[0]).execute(register, instructions.get(marker));
             register[positionToModify]++;
             marker = register[positionToModify];
-//            System.out.println(Arrays.toString(register));
         }
         System.out.println(register[0]);
+
+        //After analise of code we know that result should be sum of each number that divide
+        //content of [5] after first loop
+        //TODO Yet To Code This :)
     }
 
     private Opcode findOpcodeByName(String name) {
