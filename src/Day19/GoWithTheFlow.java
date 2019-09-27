@@ -6,7 +6,6 @@ import ImportData.ImportFromFile;
 import Intarface.Riddle;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class GoWithTheFlow implements Riddle {
@@ -21,7 +20,7 @@ public class GoWithTheFlow implements Riddle {
 
     private void importData() {
         opcodes = new ChronalClassification().setOpcodes();
-        register = new Integer[]{0, 0, 0, 0, 0, 0};
+        register = new Integer[]{1, 0, 0, 0, 0, 0};
         ArrayList<String> data = new ImportFromFile().getData(FILE);
         instructions = new ArrayList<>();
         for (String instruction : data) {
@@ -40,16 +39,31 @@ public class GoWithTheFlow implements Riddle {
         int positionToModify = instructions.get(0)[1];
         instructions.remove(0);
         int marker = 0;
+/*
         while (marker < instructions.size()) {
             register = opcodes.get(instructions.get(marker)[0]).execute(register, instructions.get(marker));
             register[positionToModify]++;
             marker = register[positionToModify];
         }
-        System.out.println(register[0]);
+        System.out.println(register[0]);*/
 
         //After analise of code we know that result should be sum of each number that divide
         //content of [5] after first loop
-        //TODO Yet To Code This :)
+
+        while (marker == 0 || marker>2) {
+            register = opcodes.get(instructions.get(marker)[0]).execute(register, instructions.get(marker));
+            register[positionToModify]++;
+            marker = register[positionToModify];
+        }
+        System.out.println("Sum of numbers that divide " + register[5] + " is " + findSum(register[5]));
+    }
+
+    private int findSum(Integer integer) {
+        int result = integer;
+        for (int i = 1; i < (integer / 2) + 1 ; i++) {
+            result += (integer % i == 0) ? i : 0;
+        }
+        return result;
     }
 
     private Opcode findOpcodeByName(String name) {

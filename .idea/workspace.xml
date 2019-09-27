@@ -80,13 +80,6 @@
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
     </task>
-    <task id="LOCAL-00015" summary="Day 8, first riddle - add comments">
-      <created>1560508880183</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1560508880183</updated>
-    </task>
     <task id="LOCAL-00016" summary="Day 8, first riddle - edit comments">
       <created>1560509306223</created>
       <option name="number" value="00016" />
@@ -423,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569488934849</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Day 19, done! quite a job!">
+      <created>1569532681309</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1569532681309</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 15.2" />
     <MESSAGE value="Day 15.3 skeletton of solution" />
     <MESSAGE value="Day 15.3 neighbours, attack, move done" />
     <MESSAGE value="Day 15.4 TODO reading order" />
@@ -479,7 +478,8 @@
     <MESSAGE value="Menu minor changes" />
     <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result" />
     <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result /2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 19, second task ready, waiting for optimization to produce some result /2" />
+    <MESSAGE value="Day 19, done! quite a job!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 19, done! quite a job!" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
