@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Day20/Coordinate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day20/RegularMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day20/instructions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day19/GoWithTheFlow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Day20" />
       <recent name="Day16" />
       <recent name="" />
     </key>
@@ -79,13 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Day 8, first riddle - edit comments">
-      <created>1560509306223</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1560509306223</updated>
     </task>
     <task id="LOCAL-00017" summary="Day 8, second riddle, add missing files">
       <created>1560511373847</created>
@@ -423,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569532681309</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Day 19, implements last method">
+      <created>1569588990451</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1569588990452</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,7 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 15.3 skeletton of solution" />
     <MESSAGE value="Day 15.3 neighbours, attack, move done" />
     <MESSAGE value="Day 15.4 TODO reading order" />
     <MESSAGE value="Day 15.5 IndexOutOfBOund in place that it shouldn't have occur" />
@@ -479,7 +481,8 @@
     <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result" />
     <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result /2" />
     <MESSAGE value="Day 19, done! quite a job!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 19, done! quite a job!" />
+    <MESSAGE value="Day 19, implements last method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 19, implements last method" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
