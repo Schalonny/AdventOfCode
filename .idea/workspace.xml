@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c897ed1-ef16-42a7-a8c2-ccd466f5079c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day20/Coordinate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day20/RegularMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day20/instructions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559754297340</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Day 8, second riddle, add missing files">
-      <created>1560511373847</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1560511373847</updated>
     </task>
     <task id="LOCAL-00018" summary="Fix minor errors; Implement Interface to each class">
       <created>1560511983147</created>
@@ -426,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569588990452</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Day 20, beggining">
+      <created>1569660283660</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1569660283661</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -457,7 +454,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Day 15.3 neighbours, attack, move done" />
     <MESSAGE value="Day 15.4 TODO reading order" />
     <MESSAGE value="Day 15.5 IndexOutOfBOund in place that it shouldn't have occur" />
     <MESSAGE value="Day 15.6 Only 2 deads(?)" />
@@ -482,7 +478,8 @@
     <MESSAGE value="Day 19, second task ready, waiting for optimization to produce some result /2" />
     <MESSAGE value="Day 19, done! quite a job!" />
     <MESSAGE value="Day 19, implements last method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 19, implements last method" />
+    <MESSAGE value="Day 20, beggining" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 20, beggining" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
